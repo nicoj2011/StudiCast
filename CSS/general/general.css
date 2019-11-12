@@ -1,23 +1,30 @@
 
 /* Standart */
-.clo-3
-{
 
+.container-fluid
+{
+    background-image: url(../../IMG/test.jpg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    min-height: 40vh;
 }
+
+#headline
+{
+    height: 40vh;
+}
+
+
 
 .col-9
 {
     width: 100vw;
 }
 
-.container-fluid
+.clo-3
 {
-    background-color: red;
-    background-image: url(../../IMG/test.jpg);
-    background-size: 100% auto;
-    min-height: 40vh;
-}
 
+}
 
 #chat
 {
