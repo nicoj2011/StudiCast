@@ -1,0 +1,21 @@
+header
+{
+    min-height: 5vh;
+    background-color: red;
+}
+
+#logo
+{
+    background-image: url("../../IMG/Logo.jpg");
+    width: 50px;
+}
+
+.clo-3
+{
+
+}
+
+.col-9
+{
+    width: 100vw;
+}
