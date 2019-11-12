@@ -1,6 +1,9 @@
-#header
+header
 {
-
-    height: 10%;
+    min-height: 70px;
     background-color: rgba(200,200,200,1);
+    width: 110%;
+    margin-top:-10px;
+    margin-left:-10px;
+    margin-right:-10px;
 }
