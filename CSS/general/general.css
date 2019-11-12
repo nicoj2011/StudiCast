@@ -1,15 +1,5 @@
-header
-{
-    min-height: 5vh;
-    background-color: white;
-}
 
-#logo
-{
-    background-image: url("../../IMG/Logo.jpg");
-    width: 50px;
-}
-
+/* Standart */
 .clo-3
 {
 
@@ -24,8 +14,9 @@ header
 {
     /*background-image: url("../../IMG/Logo.jpg");*/
     background-color: red;
-    min-height: 15vh;
+    min-height: 30vh;
 }
+
 
 #chat
 {
@@ -33,6 +24,9 @@ header
     border-style: solid;
 }
 
+
+
+/* Kontakt */
 .form
 {
     width: 40vw;
