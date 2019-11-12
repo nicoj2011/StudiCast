@@ -12,9 +12,10 @@
 
 .container-fluid
 {
-    /*background-image: url("../../IMG/Logo.jpg");*/
     background-color: red;
-    min-height: 30vh;
+    background-image: url(../../IMG/test.jpg);
+    background-size: 100% auto;
+    min-height: 40vh;
 }
 
 
