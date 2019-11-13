@@ -6,7 +6,7 @@
     background-image: url(../../IMG/test.jpg);
     background-size: 100% auto;
     background-repeat: no-repeat;
-    min-height: 40vh;
+    min-height: initial;
 }
 
 #headline
