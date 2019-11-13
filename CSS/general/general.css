@@ -24,30 +24,26 @@
     font-size: 5vh;
 }
 
-.col-8
+.col-9
 {
     width: 100vw;
 }
 
-.col-8 audio
+.col-9 audio
 {
     margin: center;
 }
 
-.clo-4
+.clo-3
 {
 
 }
 
-#login
+.login
 {
    width: 100%;
 }
 
-#btnlogin
-{
-    float: right;
-}
 
 
 #chat
