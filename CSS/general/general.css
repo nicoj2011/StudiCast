@@ -6,14 +6,18 @@
     background-image: url(../../IMG/test.jpg);
     background-size: 100% auto;
     background-repeat: no-repeat;
-    min-height: initial;
+    min-height: 35vh;
 }
 
 #headline
 {
-    height: 40vh;
+    height: 35vh;
 }
 
+.col-md-6 h1
+{
+    color: white
+}
 
 
 .col-9
