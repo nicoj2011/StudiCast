@@ -32,7 +32,7 @@
 
 .col-9 audio
 {
-    margin: center;
+    width: 100%;
 }
 
 .clo-3
@@ -40,46 +40,56 @@
 
 }
 
+.login-flex
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 #txtName
 {
-    width: 20vw;
+    width: 100%;
 }
 
 #txtPW
 {
-    width: 20vw;
+    width: 100%;
 }
 
 #btnAnmelden
 {
-    width: 10vw;
+    width: 47%;
+    font-size: 80%;
+
 }
 
 #btnLogin
 {
-    width: 10vw;
+    width: 47%;
+    font-size: 80%;
 }
 
 .login
 {
-    width: 20vw;
+    width: 100%;
 }
 
 #chat
 {
-    height: 500px;
-    width: 20vw;
+    height: 50vh;
+    width: 100%;
     border-style: solid;
 }
 
 #txtChat
 {
-    width: 20vw;
+    width: 100%;
 }
 
 #btnChat
 {
-    width: 20vw;
+    width: 100%;
 }
 
 /* Kontakt */

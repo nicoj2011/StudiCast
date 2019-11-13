@@ -84,25 +84,40 @@
                     <audio src="media/media.mp3"  controls></audio>
 
                     <br>
+                    <br>
 
-                    <table>
-                        <tr>
-                            <td>Name:</td>
-                            <td>Max Müller</td>
-                        </tr>
-                        <tr>
-                            <td>Firma:</td>
-                            <td>Müller GmBh</td>
-                        </tr>
-                        <tr>
-                            <td>Position:</td>
-                            <td>TOD</td>
-                        </tr>
-                        <tr>
-                            <td>Alter:</td>
-                            <td>50</td>
-                        </tr>
-                    </table>
+                    <div class="row">
+                        <div class="col-3">
+                            Name:
+                        </div>
+                        <div class="col-6">
+                            Max Müller
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            Firma:
+                        </div>
+                        <div class="col-6">
+                            Müller GmBh
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            Position:
+                        </div>
+                        <div class="col-6">
+                            Manager
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            Alter:
+                        </div>
+                        <div class="col-6">
+                            50
+                        </div>
+                    </div>
 
                     <br>
 
@@ -110,7 +125,7 @@
                     <textarea class="form-control" id="txtKommentar" rows="3">
                     </textarea>
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button">Kommentieren</button>
+                        <button class="btn btn-outline-dark" type="button">Kommentieren</button>
                     </div>
                     </div>
 
@@ -122,23 +137,17 @@
 
                         <input placeholder="Name" id="txtName" type="text">
 
-                        <input placeholer="Passwort" id="txtPW" type="password">
+                        <input placeholder="Passwort" id="txtPW" type="password">
 
-                        <table>
-                            <tr>
-                                <td>
-                                    <button id="btnAnmelden" class="btn btn-light">Anmelden</button>
-                                </td>
-                                <td>
-                                    <button id="btnLogin" class="btn btn-light">Login</button>
-                                </td>
-                            </tr>
+                        <div class="login-flex">
+                            <button id="btnAnmelden" class="btn btn-light">Anmelden</button>
 
-                        </table>
+                            <button id="btnLogin" class="btn btn-light">Login</button>
+                        </div>
 
                         <br>
 
-                        <label for="chat">Laberkiste</label>
+                        <label for="chat"><h4>Laberkiste:</h4></label>
 
                         <div id="chat">
 
@@ -155,6 +164,7 @@
             </div>
         </div>
 
+        <br><br><br><br><br><br><br><br><br><br>
         <footer class="container">
 
         </footer>
