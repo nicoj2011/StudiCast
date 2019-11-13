@@ -39,17 +39,46 @@
 
 }
 
-.login
+#txtName
 {
-   width: 100%;
+    width: 20vw;
 }
 
+#txtPW
+{
+    width: 20vw;
+}
 
+#btnAnmelden
+{
+    width: 10vw;
+}
+
+#btnLogin
+{
+    width: 10vw;
+}
+
+.login
+{
+    width: 20vw;
+}
 
 #chat
 {
     height: 500px;
+    width: 20vw;
     border-style: solid;
+}
+
+#txtChat
+{
+    width: 20vw;
+}
+
+#btnChat
+{
+    width: 20vw;
 }
 
 /* Kontakt */
