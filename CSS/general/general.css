@@ -1,4 +1,9 @@
 /* Standart */
+.spacer
+{
+    height: 5px;
+}
+
 .container-fluid
 {
     background-image: url(../../IMG/test.jpg);
