@@ -24,19 +24,24 @@
     font-size: 5vh;
 }
 
-.col-9
+.col-8
 {
     width: 100vw;
 }
 
-.col-9 audio
+.col-8 audio
 {
     margin: center;
 }
 
-.clo-3
+.clo-4
 {
 
+}
+
+#login
+{
+   width: 100%;
 }
 
 #btnlogin
