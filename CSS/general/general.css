@@ -39,6 +39,12 @@
 
 }
 
+#btnlogin
+{
+    float: right;
+}
+
+
 #chat
 {
     height: 500px;

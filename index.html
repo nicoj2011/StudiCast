@@ -18,14 +18,22 @@
     <body>
         <header class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="collapse navbar-collapse">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
 
                         <a href="index.html">
                             <img src="IMG/Logo.jpg" width="30%">
                         </a>
 
-                    <a class="navbar-brand" href="index.html">StudiCast</a>
-                    <ul class="navbar-nav mr-auto">
+
+                    <ul class="navbar-nav">
+                        <li>
+                            <a class="navbar-brand" href="index.html">StudiCast</a>
+                        </li>
                         <li class="nav-item active">
                         <a class="nav-link" href="index.html">Podcast <span class="sr-only">(current)</span></a>
                         </li>
@@ -95,7 +103,23 @@
                 </div>
                 <div class="col-3">
                     <div>
+
+                        <div id="login">
+
+                            <br>
+
+                            <table>
+
+                                <tr><td>Name:</td><td><input type="text"></td></tr>
+                                <tr><td>Password:</td><td><input type="text"></td></tr>
+                                <tr><td><button id="btnAnmelden" class="btn btn-light">Anmelden</button></td><td><button id="btnLogin" class="btn btn-light">Login</button></td></tr>
+
+                            </table>
+
+                        </div>
+
                         <br>
+
                         <label for="chat">Laberkiste</label>
 
                         <div id="chat">
@@ -116,6 +140,12 @@
         <footer class="container">
 
         </footer>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+        <script src = "JS/bootstrap.bundle.min.js"></script>
+        <script src = "JS/bootstrap.min.js"></script>
 
     </body>
 </html>
