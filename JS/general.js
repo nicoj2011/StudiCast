@@ -1,6 +1,9 @@
-$(document).ready ( function(){
+$(document).ready ( function()
+{
     tabs("Podcast");
     toggledLogin = false;
+
+    dbKommentare();
 
     $(".kommentarBild").css({'height':$(".kommentarBild").width()+'px'});
 
@@ -81,5 +84,83 @@ $(function()
     });
 
 });
+
+function kommentar (returnValue)
+{
+    let rowKommentar = returnValue.split('~');
+
+    console.log(returnValue);
+
+    returnValue.split('~').forEach(function(element)
+    {
+        console.log(element.split("|")[0]);
+        if (element == '"0' || element == '0"')
+        {
+        }
+        else
+        {
+            $('.kommentarSektion').append(''
+            + '<div class="row"> '
+                + '<div class="col-2 kommentar">'
+                    + '<div class="kommentarBild" style="background-image: url(../IMG/' + element.split("|")[1] +')">'
+                    + ''
+                    + '</div>'
+                    + '<div class="kommentarName">'
+                        + element.split("|")[0]
+                    + '</div>'
+                + '</div>'
+                + '<div class="col">'
+                    + element.split("|")[2]
+                + '</div>'
+                + '<div class="col-2">'
+                    + '<div class="kommentarDatum">'
+                        + element.split("|")[3].split(" ")[0]
+                    + '</div>'
+                    + '<div class="kommentarUhrzeit">'
+                        + element.split("|")[3].split(" ")[1]
+                    + '</div>'
+                + '</div>'
+                + '</div>'
+            + '<br>');
+        }
+    });
+}
+
+/* PHP Aufrufe */
+$(function()
+{
+    $("#btnTest").click(function()
+    {
+        $.ajax(
+            {
+            type: 'POST',
+            url: './PHP/kommentar.php',
+            //data: 'name=' + "test",
+            success: function (returnValue)
+                {
+                    kommentar(returnValue);
+                }
+        });
+    });
+});
+
+function dbKommentare()
+{
+    $.ajax(
+    {
+    type: 'POST',
+    url: './PHP/kommentar.php',
+    //data: 'name=' + "test",
+    success: function (returnValue)
+        {
+            kommentar(returnValue);
+        }
+    });
+}
+
+
+
+
+
 
 

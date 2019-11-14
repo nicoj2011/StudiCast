@@ -89,13 +89,14 @@
 {
 
     border-radius: 5%;
-    background-color: red;
+    background-color: black;
+    /* background-image: url("../../IMG/test.jpg"); */
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
     padding-top: 89%;
     width: 100%;
-    /*
-    width: 100%;
-    height: 9vh;
-    */
+
 }
 
 .clo-3
