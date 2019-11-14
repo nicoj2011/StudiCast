@@ -25,6 +25,12 @@
 .btn-light:focus
 {
     border-style: none;
+    box-shadow: inherit;
+}
+
+.btn-outline-dark:focus
+{
+    box-shadow: inherit;
 }
 
 #headerBrand
