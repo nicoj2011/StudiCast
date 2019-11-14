@@ -40,6 +40,11 @@
     width: 100%;
 }
 
+.tabsInactiv
+{
+    display: none;
+}
+
 .clo-3
 {
 

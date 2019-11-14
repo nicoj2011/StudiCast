@@ -13,6 +13,8 @@
         <link rel="shortcut icon" type="image/x-icon" href="./IMG/icon.png">
 
         <title>StudiCast</title>
+
+        <script src="JS/general.js"></script>
     </head>
 
     <body>
@@ -33,20 +35,21 @@
                         <li>
                             <a class="navbar-brand" href="index.html">StudiCast</a>
                         </li>
-                        <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Podcast <span class="sr-only">(current)</span></a>
+                        <li class="nav-item">
+                        <a class="nav-link" onclick="tabs('Podcast')">Podcast <span class="sr-only">(current)</span>
+                        </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="news.html">News</a>
+                            <a class="nav-link" onclick="tabs('News')">News</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="archiv.html">Archiv</a>
+                            <a class="nav-link" onclick="tabs('Archiv')">Archiv</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="umfrage.html">Umfrage</a>
+                            <a class="nav-link" onclick="tabs('Umfrage')">Umfrage</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="kontakt.html">Kontakt</a>
+                            <a class="nav-link" onclick="tabs('Kontakt')">Kontakt</a>
                         </li>
 
                     </ul>
@@ -70,66 +73,103 @@
         <div class="container">
             <div class="row">
                 <div class="col-9">
+                    <!-- Tab Podcast -->
+                    <div  id="tabPodcast">
+                        <br>
 
-                    <br>
+                        <h3>Podcast</h3>
 
-                    <h3>Podcast</h3>
+                        <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                        </p>
+
+                        <br>
+
+                        <audio src="media/media.mp3"  controls></audio>
+
+                        <br>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-3">
+                                Name:
+                            </div>
+                            <div class="col-6">
+                                Max Müller
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                Firma:
+                            </div>
+                            <div class="col-6">
+                                Müller GmBh
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                Position:
+                            </div>
+                            <div class="col-6">
+                                Manager
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                Alter:
+                            </div>
+                            <div class="col-6">
+                                50
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="input-group">
+                            <textarea class="form-control btn-outline-dark" id="txtKommentar" rows="3">
+                            </textarea>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-dark" type="button">Kommentieren</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab News -->
+                    <div id="tabNews">
+                        derdasdasss
+                    </div>
+
+                    <!-- Tab Archiv -->
+                    <div id="tabArchiv">
+                        derdasdasss
+                    </div>
+
+                    <!-- Tab Umfrage -->
+                    <div id="tabUmfrage">
+                        derdasdasss
+                    </div>
+
+                    <!-- Tab Kontakt -->
+                    <div id="tabKontakt">
+                        <h1>StudiCast</h1>
+                    <h3>Kontakt</h3>
+
+                   <h5>Wer sind wir:</h5>
 
                     <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                     </p>
-
-                    <br>
-
-                    <audio src="media/media.mp3"  controls></audio>
-
-                    <br>
-                    <br>
-
-                    <div class="row">
-                        <div class="col-3">
-                            Name:
-                        </div>
-                        <div class="col-6">
-                            Max Müller
-                        </div>
+                    <form>
+                         <table>
+                            <tr><td>Name:</td><td class="form"><input type="text"> </td></tr>
+                            <tr><td>Mail:</td><td class="form"><input type="email"></td></tr>
+                            <tr><td>Betreff:</td><td class="form"><input type="text"></td></tr>
+                            <tr><td>Text:</td><td class="form"><textarea class="form-control" id="send" rows="3"></textarea></td></tr>
+                        </table>
+                    </form>
                     </div>
-                    <div class="row">
-                        <div class="col-3">
-                            Firma:
-                        </div>
-                        <div class="col-6">
-                            Müller GmBh
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3">
-                            Position:
-                        </div>
-                        <div class="col-6">
-                            Manager
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3">
-                            Alter:
-                        </div>
-                        <div class="col-6">
-                            50
-                        </div>
-                    </div>
-
-                    <br>
-
-                    <div class="input-group">
-                        <textarea class="form-control btn-outline-dark" id="txtKommentar" rows="3">
-                        </textarea>
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-dark" type="button">Kommentieren</button>
-                        </div>
-                    </div>
-
                 </div>
+
 
                 <div class="col-3">
                     <div>
