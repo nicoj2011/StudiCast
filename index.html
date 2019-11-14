@@ -14,6 +14,17 @@
 
         <title>StudiCast</title>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+        <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <script src = "JS/bootstrap.bundle.min.js"></script>
+        <script src = "JS/bootstrap.min.js"></script>
+
+
         <script src="JS/general.js"></script>
     </head>
 
@@ -26,32 +37,26 @@
 
                 <div class="collapse navbar-collapse" id="navbarNav">
 
-                        <a href="index.html">
-                            <img src="IMG/Logo.jpg" width="30%">
-                        </a>
-
+                    <a href="index.html">
+                        <img src="IMG/Logo.jpg" width="30%">
+                    </a>
 
                     <ul class="navbar-nav">
-                        <li>
-                            <a class="navbar-brand" href="index.html">StudiCast</a>
+                        <li class="nav-item">
+                            <button class="btn btn-light" onclick="tabs('Podcast')" id="hTabPodcast">Podcast</button>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" onclick="tabs('Podcast')">Podcast <span class="sr-only">(current)</span>
-                        </a>
+                            <button class="btn btn-light" onclick="tabs('News')" id="hTabNews">News</button>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" onclick="tabs('News')">News</a>
+                            <button class="btn btn-light" onclick="tabs('Archiv')" id="hTabArchiv">Archiv</button>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" onclick="tabs('Archiv')">Archiv</a>
+                            <button class="btn btn-light" onclick="tabs('Umfrage')" id="hTabUmfrage">Umfrage</button>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" onclick="tabs('Umfrage')">Umfrage</a>
+                            <button class="btn btn-light" onclick="tabs('Kontakt')" id="hTabKontakt">Kontakt</button>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" onclick="tabs('Kontakt')">Kontakt</a>
-                        </li>
-
                     </ul>
                 </div>
             </nav>
@@ -136,37 +141,46 @@
 
                     <!-- Tab News -->
                     <div id="tabNews">
-                        derdasdasss
+                        <br>
+
+                        <h3>News</h3>
+
                     </div>
 
                     <!-- Tab Archiv -->
                     <div id="tabArchiv">
-                        derdasdasss
+                        <br>
+
+                        <h3>Archiv</h3>
                     </div>
 
                     <!-- Tab Umfrage -->
                     <div id="tabUmfrage">
-                        derdasdasss
+                        <br>
+
+                        <h3>Umfrage</h3>
                     </div>
 
                     <!-- Tab Kontakt -->
                     <div id="tabKontakt">
-                        <h1>StudiCast</h1>
-                    <h3>Kontakt</h3>
 
-                   <h5>Wer sind wir:</h5>
+                        <br>
 
-                    <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                    </p>
-                    <form>
-                         <table>
-                            <tr><td>Name:</td><td class="form"><input type="text"> </td></tr>
-                            <tr><td>Mail:</td><td class="form"><input type="email"></td></tr>
-                            <tr><td>Betreff:</td><td class="form"><input type="text"></td></tr>
-                            <tr><td>Text:</td><td class="form"><textarea class="form-control" id="send" rows="3"></textarea></td></tr>
-                        </table>
-                    </form>
+                        <h3>Kontakt</h3>
+
+                       <h5>Wer sind wir:</h5>
+
+                        <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                        </p>
+                        <form>
+                             <table>
+                                <tr><td>Name:</td><td class="form"><input type="text"> </td></tr>
+                                <tr><td>Mail:</td><td class="form"><input type="email"></td></tr>
+                                <tr><td>Betreff:</td><td class="form"><input type="text"></td></tr>
+                                <tr><td>Text:</td><td class="form"><textarea class="form-control" id="send" rows="3"></textarea></td></tr>
+                            </table>
+                        </form>
                     </div>
                 </div>
 
@@ -174,19 +188,30 @@
                 <div class="col-3">
                     <div>
                         <br>
-
-                        <input placeholder="Name" id="txtName" type="text">
-
-                        <input placeholder="Passwort" id="txtPW" type="password">
+                        <div id="profil">
+                                <button class="btn btn-light" id="profilBTN">LOGIN</button>
+                        </div>
 
                         <div class="spacer">
 
                         </div>
 
-                        <div class="login-flex">
-                            <button id="btnAnmelden" class="btn btn-outline-dark">Anmelden</button>
+                        <div id="loginDiv">
 
-                            <button id="btnLogin" class="btn btn-outline-dark">Login</button>
+                            <input placeholder="Name" id="txtName" type="text">
+
+                            <input placeholder="Passwort" id="txtPW" type="password">
+
+                            <div class="spacer">
+
+                            </div>
+
+                            <div class="login-flex">
+                                <button id="btnAnmelden" class="btn btn-outline-dark">Anmelden</button>
+
+                                <button id="btnLogin" class="btn btn-outline-dark">Login</button>
+                            </div>
+
                         </div>
 
                         <br>
@@ -212,12 +237,5 @@
         <footer class="container">
 
         </footer>
-
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-
-        <script src = "JS/bootstrap.bundle.min.js"></script>
-        <script src = "JS/bootstrap.min.js"></script>
-
     </body>
 </html>
