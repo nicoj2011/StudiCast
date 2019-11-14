@@ -17,6 +17,16 @@
     border-color: rgba(0,0,0,0.3);
 }
 
+.nav-item
+{
+   margin-right: 5px;
+}
+
+.btn-light:focus
+{
+    border-style: none;
+}
+
 #headerBrand
 {
     font-size: 20px;

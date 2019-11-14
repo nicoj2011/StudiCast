@@ -15,17 +15,8 @@ $(document).ready ( function(){
 
 function tabs(tab)
 {
-    console.log("test");
-    document.getElementById("tabPodcast").style.display = "none";
-    document.getElementById("hTabPodcast").style.color = "rgba(0,0,0,0.3)";
-    document.getElementById("tabNews").style.display = "none";
-    document.getElementById("hTabNews").style.color = "rgba(0,0,0,0.3)";
-    document.getElementById("tabArchiv").style.display = "none";
-    document.getElementById("hTabArchiv").style.color = "rgba(0,0,0,0.3)";
-    document.getElementById("tabUmfrage").style.display = "none";
-    document.getElementById("hTabUmfrage").style.color = "rgba(0,0,0,0.3)";
-    document.getElementById("tabKontakt").style.display = "none";
-    document.getElementById("hTabKontakt").style.color = "rgba(0,0,0,0.3)";
+     $ ( ".tabs").css("display", "none");
+     $ ( ".btn-light").css("color", "rgba(0,0,0,0.3)");
 
     if(tab == "Podcast")
         {
@@ -54,7 +45,8 @@ function tabs(tab)
         }
 }
 
-$(function() {
+$(function()
+  {
     $( "#profilBTN" ).click(function()
     {
 
