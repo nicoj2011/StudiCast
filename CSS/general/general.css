@@ -78,6 +78,26 @@
     display: none;
 }
 
+.col-2.kommentar
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.kommentarBild
+{
+
+    border-radius: 5%;
+    background-color: red;
+    padding-top: 89%;
+    width: 100%;
+    /*
+    width: 100%;
+    height: 9vh;
+    */
+}
+
 .clo-3
 {
 

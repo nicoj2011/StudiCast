@@ -2,14 +2,12 @@ $(document).ready ( function(){
     tabs("Podcast");
     toggledLogin = false;
 
-    $(function() {
+    $(".kommentarBild").css({'height':$(".kommentarBild").width()+'px'});
 
-        $("#txtChat").prop('disabled', true);
-        $("#btnChat").prop('disabled', true);
-        $("#txtKommentar").prop('disabled', true);
-        $("#btnKommentar").prop('disabled', true);
-
-    });
+    $("#txtChat").prop('disabled', true);
+    $("#btnChat").prop('disabled', true);
+    $("#txtKommentar").prop('disabled', true);
+    $("#btnKommentar").prop('disabled', true);
 
 });
 
@@ -75,6 +73,11 @@ $(function()
         nickname = document.getElementById("txtName").value;
         password = document.getElementById("txtPW").value;
 
+    });
+
+    $(window).on('resize', function()
+    {
+      $(".kommentarBild").css({'height':$(".kommentarBild").width()+'px'});
     });
 
 });
