@@ -2,6 +2,15 @@ $(document).ready ( function(){
     tabs("Podcast");
     toggledLogin = false;
 
+    $(function() {
+
+        $("#txtChat").prop('disabled', true);
+        $("#btnChat").prop('disabled', true);
+        $("#txtKommentar").prop('disabled', true);
+        $("#btnKommentar").prop('disabled', true);
+
+    });
+
 });
 
 function tabs(tab)
@@ -52,4 +61,30 @@ $(function() {
         $( "#loginDiv" ).toggle( "blind" );
 
     });
+
+    $( "#btnAnmelden" ).click(function()
+    {
+
+        $( "#divAnmelden" ).toggle( "blind" );
+
+        if( $('#btnAnmelden').text() == "Anmelden")
+            {
+                $('#btnAnmelden').text("Abbrechen");
+            }
+        else
+            {
+               $('#btnAnmelden').text("Anmelden");
+            }
+    });
+
+
+    $( "#btnLogin" ).click(function()
+    {
+        nickname = document.getElementById("txtName").value;
+        password = document.getElementById("txtPW").value;
+
+    });
+
 });
+
+

@@ -106,6 +106,22 @@
     width: 100%;
 }
 
+#txtPWRepeat
+{
+    width: 100%;
+}
+
+#txtMail
+{
+    width: 100%;
+}
+
+#divAnmelden
+{
+    width: 100%;
+    display: none;
+}
+
 #btnAnmelden
 {
     width: 47%;
