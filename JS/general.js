@@ -102,7 +102,7 @@ function kommentar (returnValue)
             $('.kommentarSektion').append(''
             + '<div class="row"> '
                 + '<div class="col-2 kommentar">'
-                    + '<div class="kommentarBild" style="background-image: url(../IMG/' + element.split("|")[1] +')">'
+                    + '<div class="kommentarBild" style="background-image: url(../IMG/Profil/' + element.split("|")[1] +')">'
                     + ''
                     + '</div>'
                     + '<div class="kommentarName">'
