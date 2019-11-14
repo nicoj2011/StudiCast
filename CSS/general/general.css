@@ -4,11 +4,17 @@
     height: 5px;
 }
 
+.btn-outline-dark
+{
+	border-color: rgba(0,0,0,0.3)
+}
+
 .btn-light
 {
     background-color: white;
     border-radius: 0;
     border-style: hidden;
+    border-color: rgba(0,0,0,0.3);
 }
 
 #headerBrand
@@ -121,6 +127,7 @@
 
 #chat
 {
+    border-color: rgba(0,0,0,0.3);
     height: 50vh;
     width: 100%;
     border-style: solid;
