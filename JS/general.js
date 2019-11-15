@@ -124,6 +124,34 @@ $(function()
       $(".kommentarBild").css({'height':$(".kommentarBild").width()+'px'});
     });
 
+    $( "#btnLogout" ).click(function()
+    {
+        //$('#loginDiv').css("display", "none");
+        $('#profilBTN').css("display", "inherit");
+
+
+        $('#profilBild').css({
+        'display': 'none'
+        /*'border-radius': '5%',
+        'background-color': 'black',
+        'background-image': 'url(../IMG/Profil/' + loggedImg + ')',
+        'background-size': '100% auto',
+        'background-repeat': 'no-repeat',
+        'background-position': 'center',
+        'padding-top': '89%',
+        'width': '100%' */
+        });
+
+        $('#account').css("display", "none");
+
+        loggedNick = "";
+        loggedMail = "";
+        loggedImg = "";
+        loggedRole = "";
+
+        disabled(true);
+    });
+
 });
 
 function kommentar (returnValue)
