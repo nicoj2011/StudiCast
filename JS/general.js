@@ -3,7 +3,7 @@ $(document).ready ( function()
     tabs("Podcast");
     toggledLogin = false;
 
-    dbKommentare();
+    loadComments();
 
     $(".kommentarBild").css({'height':$(".kommentarBild").width()+'px'});
 
@@ -46,6 +46,19 @@ function tabs(tab)
         }
 }
 
+function isMail(mail)
+{
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(mail);
+}
+
+function alert(text, color)
+{
+    $('#signUpAlert').css("background-color", color);
+    $('#signUpAlert').html(text);
+    $('#signUpAlert').show("Blind");
+}
+
 $(function()
   {
     $( "#profilBTN" ).click(function()
@@ -63,19 +76,13 @@ $(function()
         if( $('#btnAnmelden').text() == "Anmelden")
             {
                 $('#btnAnmelden').text("Abbrechen");
+                $('#btnLogin').text("Anmelden");
             }
         else
             {
-               $('#btnAnmelden').text("Anmelden");
+                $('#btnAnmelden').text("Anmelden");
+                $('#btnLogin').text("Login");
             }
-    });
-
-
-    $( "#btnLogin" ).click(function()
-    {
-        nickname = document.getElementById("txtName").value;
-        password = document.getElementById("txtPW").value;
-
     });
 
     $(window).on('resize', function()
@@ -89,11 +96,8 @@ function kommentar (returnValue)
 {
     let rowKommentar = returnValue.split('~');
 
-    console.log(returnValue);
-
     returnValue.split('~').forEach(function(element)
     {
-        console.log(element.split("|")[0]);
         if (element == '"0' || element == '0"')
         {
         }
@@ -128,23 +132,71 @@ function kommentar (returnValue)
 
 /* PHP Aufrufe */
 $(function()
-{
-    $("#btnTest").click(function()
     {
-        $.ajax(
+    /* SIGN UP */
+    $("#btnLogin").click(function()
+        {
+
+        if ($('#btnLogin').text() == 'Anmelden')
             {
-            type: 'POST',
-            url: './PHP/kommentar.php',
-            //data: 'name=' + "test",
-            success: function (returnValue)
+            if ($("#txtName").val().trim() == "" || $("#txtPW").val().trim() == "" || $("#txtPWRepeat").val().trim() == "" || $("#txtMail").val().trim() == "")
                 {
-                    kommentar(returnValue);
+                    alert("Füllen Sie bitte alle Felder aus.", "red");
                 }
+                else
+                    {
+                    if (isMail($("#txtMail").val()))
+                        {
+                            console.log($("#txtPWRepeat").val());
+                            console.log($("#txtPW").val());
+                        if ($("#txtPWRepeat").val() != $("#txtPW").val())
+                            {
+                               alert("Passwörter müssen übereinstimmen.", "red");
+                            }
+                        else
+                            {
+                                $.post( "../PHP/signUp.php", { nickname: $("#txtName").val(),  password: $("#txtPW").val(),  mail: $("#txtMail").val()}).done( function(returnValue)
+                                {
+                                    console.log(returnValue);
+                                    if(returnValue == 0)
+                                        {
+                                            alert("Benutzer ist bereits vorhanden.", "red");
+                                        }
+                                    else
+                                        {
+                                            alert("Erolgreich angemeldet.", "forestgreen");
+                                            $( "#divAnmelden" ).toggle( "blind" );
+
+                                            if( $('#btnAnmelden').text() == "Anmelden")
+                                                {
+                                                    $('#btnAnmelden').text("Abbrechen");
+                                                    $('#btnLogin').text("Anmelden");
+                                                }
+                                            else
+                                                {
+                                                    $('#btnAnmelden').text("Anmelden");
+                                                    $('#btnLogin').text("Login");
+                                                }
+
+                                        }
+                                });
+                            }
+                        }
+                        else
+                        {
+                                alert("Geben Sie bitte eine korrekte E-Mail an.", "red");
+                        }
+                    }
+            }
+        else if ($('#btnLogin').text() == "Login")
+            {
+
+
+            }
         });
     });
-});
 
-function dbKommentare()
+function loadComments()
 {
     $.ajax(
     {
