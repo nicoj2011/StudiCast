@@ -29,10 +29,9 @@ else
 {
     while($row = $result->fetch_assoc())
     {
-        $test = $row['Passwort'];
        if ($row["Passwort"] == $password)
        {
-           $return = 1;
+           $return = "|" . $row['Nickname'] . "|" . $row['Mail'] . "|" . $row['Bild'] . "|" . $row['Rolle'] . "|";
        }
     }
 }

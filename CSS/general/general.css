@@ -122,6 +122,16 @@
     width: 100%;
 }
 
+#loggedNick
+{
+    font-size: 130%;
+    font-weight: 100;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
 #loginDiv
 {
     display: none;
@@ -189,6 +199,69 @@
 .login
 {
     width: 100%;
+}
+
+#account
+{
+    display: none;
+}
+#divChangeName
+{
+    display: none;
+}
+#btnChangeName
+{
+    width:100%;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#txtNameChange
+{
+    width: 100%;
+}
+#btnNameChange
+{
+    width: 100%;
+    font-size: 90%;
+    border-radius: 0;
+}
+#divChangePassword
+{
+    display: none;
+}
+#btnChangePassword
+{
+    width:100%;
+    border-radius: 0;
+}
+#txtPasswordChange
+{
+    width: 100%;
+}
+#btnPasswordChange
+{
+    width: 100%;
+    font-size: 90%;
+    border-radius: 0;
+}
+#divChangeMail
+{
+    display: none;
+}
+#btnChangeMail
+{
+    width:100%;
+    border-radius: 0;
+}
+#txtMailChange
+{
+    width: 100%;
+}
+#btnMailChange
+{
+    width: 100%;
+    font-size: 90%;
+    border-radius: 0;
 }
 
 #chat

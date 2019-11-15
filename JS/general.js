@@ -11,6 +11,12 @@ $(document).ready ( function()
 
 });
 
+var loggedNickname;
+var loggedMail;
+var loggedImg;
+var loggedRole;
+
+
 function tabs(tab)
 {
      $ ( ".tabs").css("display", "none");
@@ -90,6 +96,21 @@ $(function()
             }
     });
 
+    $( "#btnChangeName" ).click(function()
+    {
+        $( "#divChangeName" ).toggle( "blind" );
+    });
+
+    $( "#btnChangePassword" ).click(function()
+    {
+        $( "#divChangePassword" ).toggle( "blind" );
+    });
+
+    $( "#btnChangeMail" ).click(function()
+    {
+        $( "#divChangeMail" ).toggle( "blind" );
+    });
+
     $(window).on('resize', function()
     {
       $(".kommentarBild").css({'height':$(".kommentarBild").width()+'px'});
@@ -152,8 +173,6 @@ $(function()
                     {
                     if (isMail($("#txtMail").val()))
                         {
-                            console.log($("#txtPWRepeat").val());
-                            console.log($("#txtPW").val());
                         if ($("#txtPWRepeat").val() != $("#txtPW").val())
                             {
                                alert("Passwörter müssen übereinstimmen.", "red");
@@ -207,6 +226,26 @@ $(function()
 
                         $('#loginDiv').css("display", "none");
                         $('#profilBTN').css("display", "none");
+
+                        $('#account').show("Blind");
+
+                        loggedNick = returnValue.split("|")[1];
+                        loggedMail = returnValue.split("|")[2];
+                        loggedImg = returnValue.split("|")[3];
+                        loggedRole = returnValue.split("|")[4];
+
+                        $('#profil').css({
+                        'border-radius': '5%',
+                        'background-color': 'black',
+                        'background-image': 'url(../IMG/' + loggedImg + ')',
+                        'background-size': '100% auto',
+                        'background-repeat': 'no-repeat',
+                        'background-position': 'center',
+                        'padding-top': '89%',
+                        'width': '100%'
+                        });
+
+                        $('#loggedNick').html(loggedNick);
 
                         disabled(false);
                     }
