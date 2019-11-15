@@ -11,7 +11,7 @@ $(document).ready ( function()
 
 });
 
-var loggedNickname;
+var loggedNickn;
 var loggedMail;
 var loggedImg;
 var loggedRole;
@@ -109,6 +109,14 @@ $(function()
     $( "#btnChangeMail" ).click(function()
     {
         $( "#divChangeMail" ).toggle( "blind" );
+    });
+
+    $( "#profilBild" ).click(function()
+    {
+        if (loggedNick != "")
+            {
+                $( "#account" ).toggle( "blind" );
+            }
     });
 
     $(window).on('resize', function()
@@ -227,17 +235,15 @@ $(function()
                         $('#loginDiv').css("display", "none");
                         $('#profilBTN').css("display", "none");
 
-                        $('#account').show("Blind");
-
                         loggedNick = returnValue.split("|")[1];
                         loggedMail = returnValue.split("|")[2];
                         loggedImg = returnValue.split("|")[3];
                         loggedRole = returnValue.split("|")[4];
 
-                        $('#profil').css({
+                        $('#profilBild').css({
                         'border-radius': '5%',
                         'background-color': 'black',
-                        'background-image': 'url(../IMG/' + loggedImg + ')',
+                        'background-image': 'url(../IMG/Profil/' + loggedImg + ')',
                         'background-size': '100% auto',
                         'background-repeat': 'no-repeat',
                         'background-position': 'center',
@@ -245,7 +251,10 @@ $(function()
                         'width': '100%'
                         });
 
+                        $('#profilBild').show("Blind");
+
                         $('#loggedNick').html(loggedNick);
+
 
                         disabled(false);
                     }

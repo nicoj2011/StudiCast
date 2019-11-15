@@ -15,7 +15,7 @@ if (!$conn) {
 $nickname = $_POST['nickname'];
 $password = $_POST['password'];
 
-$sql = 'SELECT Passwort FROM Account WHERE Nickname = "' . $nickname . '";';
+$sql = 'SELECT * FROM Account WHERE Nickname = "' . $nickname . '";';
 
 $result = $conn->query($sql);
 
