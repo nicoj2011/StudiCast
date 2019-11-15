@@ -94,7 +94,7 @@ $(function()
 
 function kommentar (returnValue)
 {
-    let rowKommentar = returnValue.split('~');
+    rowKommentar = returnValue.split('~');
 
     returnValue.split('~').forEach(function(element)
     {
@@ -157,7 +157,6 @@ $(function()
                             {
                                 $.post( "../PHP/signUp.php", { nickname: $("#txtName").val(),  password: $("#txtPW").val(),  mail: $("#txtMail").val()}).done( function(returnValue)
                                 {
-                                    console.log(returnValue);
                                     if(returnValue == 0)
                                         {
                                             alert("Benutzer ist bereits vorhanden.", "red");
@@ -190,8 +189,21 @@ $(function()
             }
         else if ($('#btnLogin').text() == "Login")
             {
+                $.post( "../PHP/login.php", { nickname: $("#txtName").val(),  password: $("#txtPW").val(),  mail: $("#txtMail").val()}).done( function(returnValue)
+                {
+                    console.log(returnValue);
+                    if(returnValue == 0)
+                    {
+                        alert("Anmeldeinformation sind falsch.", "red");
+                    }
+                    else
+                    {
+                        alert("Erolgreich angemeldet.", "forestgreen");
 
-
+                        $('#loginDiv').css("display", "none");
+                        $('#profilBTN').css("display", "none");
+                    }
+                });
             }
         });
     });

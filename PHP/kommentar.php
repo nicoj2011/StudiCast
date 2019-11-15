@@ -13,7 +13,7 @@ if (!$conn)
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT a.Nickname, a.Bild, k.Text, k.Date FROM Kommentar k, Account a;";
+$sql = "SELECT a.Nickname, a.Bild, k.Text, k.Date FROM Kommentar k, Account a WHERE k.AccID = a.ID;";
 $result = $conn->query($sql);
 
 $return = "0";
