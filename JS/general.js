@@ -5,12 +5,9 @@ $(document).ready ( function()
 
     loadComments();
 
-    $(".kommentarBild").css({'height':$(".kommentarBild").width()+'px'});
+    disabled(true);
 
-    $("#txtChat").prop('disabled', true);
-    $("#btnChat").prop('disabled', true);
-    $("#txtKommentar").prop('disabled', true);
-    $("#btnKommentar").prop('disabled', true);
+    $(".kommentarBild").css({'height':$(".kommentarBild").width()+'px'});
 
 });
 
@@ -44,6 +41,14 @@ function tabs(tab)
             document.getElementById("tabKontakt").style.display = "inherit";
             document.getElementById("hTabKontakt").style.color = "rgba(0,0,0,1)";
         }
+}
+
+function disabled(var1)
+{
+    $("#txtChat").prop('disabled', var1);
+    $("#btnChat").prop('disabled', var1);
+    $("#txtKommentar").prop('disabled', var1);
+    $("#btnKommentar").prop('disabled', var1);
 }
 
 function isMail(mail)
@@ -202,6 +207,8 @@ $(function()
 
                         $('#loginDiv').css("display", "none");
                         $('#profilBTN').css("display", "none");
+
+                        disabled(false);
                     }
                 });
             }
