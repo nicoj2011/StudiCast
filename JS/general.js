@@ -132,17 +132,10 @@ $(function()
 
         $('#profilBild').css({
         'display': 'none'
-        /*'border-radius': '5%',
-        'background-color': 'black',
-        'background-image': 'url(../IMG/Profil/' + loggedImg + ')',
-        'background-size': '100% auto',
-        'background-repeat': 'no-repeat',
-        'background-position': 'center',
-        'padding-top': '89%',
-        'width': '100%' */
         });
 
         $('#account').css("display", "none");
+        $('#signUpAlert').css("display", "none");
 
         loggedNick = "";
         loggedMail = "";
@@ -151,7 +144,6 @@ $(function()
 
         disabled(true);
     });
-
 });
 
 function kommentar (returnValue)
@@ -290,6 +282,15 @@ $(function()
             }
         });
     });
+
+$( "#btnNameChange" ).click(function()
+{
+
+    $.post( "../PHP/changeName.php", { newNickname: $('txtChangeName'), oldNickname: loggedNick }).done( function(returnValue) {
+
+    });
+
+});
 
 function loadComments()
 {
