@@ -406,20 +406,21 @@ $(function()
 
     $( "#btnKommentar" ).click(function()
     {
-        console.log($('#txtKommentar').val());
-        $.post( "../PHP/sendComment.php", { Nickname: loggedNick, Comment: $('#txtKommentar').val() }).done( function(returnValue)
+        if ($('#txtKommentar').val().trim() != "")
         {
-            console.log(returnValue);
-            if (returnValue == 0)
+            $.post( "../PHP/sendComment.php", { Nickname: loggedNick, Comment: $('#txtKommentar').val() }).done( function(returnValue)
             {
-                console.log("err");
-            }
-            else
-            {
-                loadComments(10);
-            }
+                if (returnValue == 0)
+                {
+                    console.log("err");
+                }
+                else
+                {
+                    loadComments(10);
+                }
 
-        });
+            });
+        }
     });
 });
 
