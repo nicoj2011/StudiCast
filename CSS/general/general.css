@@ -141,7 +141,7 @@
     display: none;
 }
 
-#signUpAlert
+.MyAlerts
 {
     background-color: forestgreen;
     height: 100%;
@@ -152,6 +152,11 @@
     text-align: center;
     display: none;
 
+}
+
+#changeNameAlert
+{
+    border-radius: 0;
 }
 
 .login-flex

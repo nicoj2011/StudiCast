@@ -63,11 +63,11 @@ function isMail(mail)
   return regex.test(mail);
 }
 
-function alert(text, color)
+function alert(div, text, color)
 {
-    $('#signUpAlert').css("background-color", color);
-    $('#signUpAlert').html(text);
-    $('#signUpAlert').show("Blind");
+    $(div).css("background-color", color);
+    $(div).html(text);
+    $(div).show("Blind");
 }
 
 $(function()
@@ -135,7 +135,7 @@ $(function()
         });
 
         $('#account').css("display", "none");
-        $('#signUpAlert').css("display", "none");
+        $('.MyAlerts').css("display", "none");
 
         loggedNick = "";
         loggedMail = "";
@@ -195,7 +195,7 @@ $(function()
             {
             if ($("#txtName").val().trim() == "" || $("#txtPW").val().trim() == "" || $("#txtPWRepeat").val().trim() == "" || $("#txtMail").val().trim() == "")
                 {
-                    alert("Füllen Sie bitte alle Felder aus.", "red");
+                    alert('#signUpAlert', "Füllen Sie bitte alle Felder aus.", "red");
                 }
                 else
                     {
@@ -203,7 +203,7 @@ $(function()
                         {
                         if ($("#txtPWRepeat").val() != $("#txtPW").val())
                             {
-                               alert("Passwörter müssen übereinstimmen.", "red");
+                               alert('#signUpAlert', "Passwörter müssen übereinstimmen.", "red");
                             }
                         else
                             {
@@ -211,11 +211,11 @@ $(function()
                                 {
                                     if(returnValue == 0)
                                         {
-                                            alert("Benutzer ist bereits vorhanden.", "red");
+                                            alert('#signUpAlert', "Benutzer ist bereits vorhanden.", "red");
                                         }
                                     else
                                         {
-                                            alert("Erolgreich angemeldet.", "forestgreen");
+                                            alert('#signUpAlert', "Erolgreich angemeldet.", "forestgreen");
                                             $( "#divAnmelden" ).toggle( "blind" );
 
                                             if( $('#btnAnmelden').text() == "Anmelden")
@@ -235,7 +235,7 @@ $(function()
                         }
                         else
                         {
-                                alert("Geben Sie bitte eine korrekte E-Mail an.", "red");
+                                alert('#signUpAlert', "Geben Sie bitte eine korrekte E-Mail an.", "red");
                         }
                     }
             }
@@ -243,14 +243,13 @@ $(function()
             {
                 $.post( "../PHP/login.php", { nickname: $("#txtName").val(),  password: $("#txtPW").val(),  mail: $("#txtMail").val()}).done( function(returnValue)
                 {
-                    console.log(returnValue);
                     if(returnValue == 0)
                     {
-                        alert("Anmeldeinformation sind falsch.", "red");
+                        alert('#signUpAlert', "Anmeldeinformation sind falsch.", "red");
                     }
                     else
                     {
-                        alert("Erolgreich angemeldet.", "forestgreen");
+                        alert('#signUpAlert', "Erolgreich angemeldet.", "forestgreen");
 
                         $('#loginDiv').css("display", "none");
                         $('#profilBTN').css("display", "none");
@@ -281,13 +280,25 @@ $(function()
                 });
             }
         });
-    });
 
-$( "#btnNameChange" ).click(function()
-{
 
-    $.post( "../PHP/changeName.php", { newNickname: $('txtChangeName'), oldNickname: loggedNick }).done( function(returnValue) {
+    $( "#btnNameChange" ).click(function()
+    {
+        $('#changeNameAlert').css("display", "none");
 
+        if ($('#txtNameChange').val().trim() != "")
+            {
+            console.log($('txtChangeName').val() + "|" + loggedNick);
+
+            $.post( "../PHP/changeName.php", { newNickname: $('txtChangeName').val(), oldNickname: loggedNick }).done( function(returnValue)
+            {
+
+            });
+            }
+        else
+            {
+                alert("#changeNameAlert", "Das Feld muss ausgefüllt sein.", "red");
+            }
     });
 
 });

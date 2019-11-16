@@ -15,9 +15,23 @@ if (!$conn) {
 $newNickname = $_POST['newNickname'];
 $oldNickname = $_POST['oldNickname'];
 
-$sql = 'UPDATE Account SET Nickname = "' . $newNickname . '" WHERE Nickname = "' . $oldNickname . '";';
+$sql = 'SELECT * FROM Account WHERE Nickname = "' . $oldNickname . '";';
 
 $result = $conn->query($sql);
+
+$return = "";
+
+if ($result->num_rows > 0)
+{
+    $return = 0;
+}
+else
+{
+    //$sql = 'UPDATE Account SET Nickname = "' . $newNickname . '" WHERE Nickname = "' . $oldNickname . '";';
+    $return = 1;
+    //$result = $conn->query($sql);
+}
+
 
 echo json_encode($return);
 
