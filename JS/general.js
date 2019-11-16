@@ -3,7 +3,7 @@ $(document).ready ( function()
     tabs("Podcast");
     toggledLogin = false;
 
-    loadComments();
+    loadComments(10);
 
     disabled(true);
 
@@ -111,6 +111,11 @@ $(function()
         $( "#divChangeMail" ).toggle( "blind" );
     });
 
+     $( "#btnChangeImg" ).click(function()
+    {
+        $( "#divChangeImg" ).toggle( "blind" );
+    });
+
     $( "#profilBild" ).click(function()
     {
         if (loggedNick != "")
@@ -148,6 +153,8 @@ $(function()
 
 function kommentar (returnValue)
 {
+    $('.kommentarSektion').empty();
+
     rowKommentar = returnValue.split('~');
 
     returnValue.split('~').forEach(function(element)
@@ -281,18 +288,25 @@ $(function()
             }
         });
 
-
     $( "#btnNameChange" ).click(function()
     {
         $('#changeNameAlert').css("display", "none");
 
         if ($('#txtNameChange').val().trim() != "")
             {
-            console.log($('txtChangeName').val() + "|" + loggedNick);
-
-            $.post( "../PHP/changeName.php", { newNickname: $('txtChangeName').val(), oldNickname: loggedNick }).done( function(returnValue)
+            $.post( "../PHP/changeName.php", { newNickname: $('#txtNameChange').val(), oldNickname: loggedNick }).done( function(returnValue)
             {
 
+                if (returnValue == 0)
+                {
+                    alert('#changeNameAlert', 'Der Name ist bereits vergeben.', 'red');
+                }
+                else
+                {
+                    loggedNick = $('#txtNameChange').val();
+                    alert('#changeNameAlert', 'Name wurde zu "' + loggedNick + '" geändert.', 'forestgreen');
+                    $('#loggedNick').html(loggedNick);
+                }
             });
             }
         else
@@ -301,15 +315,121 @@ $(function()
             }
     });
 
+    $( "#btnPasswordChange" ).click(function()
+    {
+        $('#changePasswordAlert').css("display", "none");
+
+        if ($('#txtPasswordChange').val().trim() != "")
+            {
+            $.post( "../PHP/changePassword.php", { Password: $('#txtPasswordChange').val(), Nickname: loggedNick }).done( function(returnValue)
+            {
+                alert('#changePasswordAlert', 'Passwort wurde geändert.', 'forestgreen');
+                $('#txtPasswordChange').val("");
+            });
+            }
+        else
+            {
+                alert("#changePasswordAlert", "Das Feld muss ausgefüllt sein.", "red");
+            }
+    });
+
+    $( "#btnMailChange" ).click(function()
+    {
+        $('#changeMailAlert').css("display", "none");
+
+        if ($('#txtMailChange').val().trim() != "")
+            {
+                if (isMail($('#txtMailChange').val()))
+                {
+                         $.post( "../PHP/changeMail.php", { Mail: $('#txtMailChange').val(), Nickname: loggedNick }).done( function(returnValue)
+                    {
+                        alert('#changeMailAlert', 'Mail wurde geändert.', 'forestgreen');
+                        $('#txtPasswordChange').val("");
+                    });
+                }
+                else
+                {
+                    alert("#changeMailAlert", "Es muss eine korrekte E-Mail angegeben werden.", "red");
+                }
+
+            }
+        else
+            {
+                alert("#changeMailAlert", "Das Feld muss ausgefüllt sein.", "red");
+            }
+        });
+
+    $( "#btnImgChange" ).click(function()
+    {
+        var fd = new FormData();
+        var files = $('#fileChangeImg')[0].files[0];
+        fd.append('file',files);
+        fd.append('Nickname', loggedNick);
+
+        $.ajax({
+            url: '../PHP/uploadIMG.php',
+            type: 'post',
+            data: fd,
+            contentType: false,
+            processData: false,
+            success: function(returnValue)
+            {
+                if (returnValue != 0)
+                {
+                    alert('#changeImgAlert', 'Profilbild wurde geändert', 'forestgreen');
+
+                    returnValue = returnValue.replace('"', '');
+                    loggedImg = returnValue.replace('"', '');
+
+                    console.log(loggedImg);
+
+                    $('#profilBild').css({
+                        'border-radius': '5%',
+                        'background-color': 'black',
+                        'background-image': 'url(../IMG/Profil/' + loggedImg + ')',
+                        'background-size': '100% auto',
+                        'background-repeat': 'no-repeat',
+                        'background-position': 'center',
+                        'padding-top': '89%',
+                        'width': '100%'
+                        });
+
+                    loadComments(10);
+                }
+                else
+                {
+                    alert('#changeImgAlert', 'Es ist ein unerwarteter Fehler aufgetreten.', 'red');
+                }
+            }
+        });
+    });
+
+    $( "#btnKommentar" ).click(function()
+    {
+        console.log($('#txtKommentar').val());
+        $.post( "../PHP/sendComment.php", { Nickname: loggedNick, Comment: $('#txtKommentar').val() }).done( function(returnValue)
+        {
+            console.log(returnValue);
+            if (returnValue == 0)
+            {
+                console.log("err");
+            }
+            else
+            {
+                loadComments(10);
+            }
+
+        });
+    });
 });
 
-function loadComments()
+function loadComments(count)
 {
     $.ajax(
     {
     type: 'POST',
     url: './PHP/kommentar.php',
-    //data: 'name=' + "test",
+    data: 'count=' + count,
     success: function (returnValue)
         {
             kommentar(returnValue);

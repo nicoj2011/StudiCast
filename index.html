@@ -224,7 +224,7 @@
 
                                 <div class="MyAlerts" id="changePasswordAlert"></div>
 
-                                <input placeholder="Passwort" id="txtPasswordChange" type="text">
+                                <input placeholder="Passwort" id="txtPasswordChange" type="password">
 
                                 <button id="btnPasswordChange" class="btn btn-outline-dark">Ändern</button>
 
@@ -244,6 +244,18 @@
                             </div>
 
                             <button id="btnChangeImg" class="btn btn-outline-dark">Profilbild ändern</button>
+                            <div id="divChangeImg">
+
+                                <div class="MyAlerts" id="changeImgAlert"></div>
+
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="fileChangeImg" lang="de">
+                                    <label class="custom-file-label" for="fileChangeImg" data-browse="Durchsuchen">Bild auswählen</label>
+                                </div>
+
+
+                                <button id="btnImgChange" class="btn btn-outline-dark">Ändern</button>
+                            </div>
 
                             <button id="btnLogout" class="btn btn-outline-dark">Logout</button>
                         </div>
@@ -251,9 +263,9 @@
                         <div id="loginDiv">
                             <div class="MyAlerts" id="signUpAlert"></div>
 
-                            <input placeholder="Name" id="txtName" type="text">
+                            <input placeholder="Name" id="txtName" type="text" tabindex="1">
 
-                            <input placeholder="Passwort" id="txtPW" type="password">
+                            <input placeholder="Passwort" id="txtPW" type="password" tabindex="2">
                             <div id="divAnmelden">
                                 <input placeholder="Passwort Wiederholen" id="txtPWRepeat" type="password">
 
@@ -267,7 +279,7 @@
                             <div class="login-flex">
                                 <button id="btnAnmelden" class="btn btn-outline-dark">Anmelden</button>
 
-                                <button id="btnLogin" class="btn btn-outline-dark">Login</button>
+                                <button id="btnLogin" class="btn btn-outline-dark" tabindex="3">Login</button>
                             </div>
 
                         </div>

@@ -12,27 +12,26 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$newNickname = $_POST['newNickname'];
-$oldNickname = $_POST['oldNickname'];
+$Nickname = $_POST['Nickname'];
+$Mail = $_POST['Mail'];
 
-$sql = 'SELECT * FROM Account WHERE Nickname = "' . $newNickname . '";';
+$sql = 'SELECT * FROM Account WHERE Nickname = "' . $Nickname . '";';
 
 $result = $conn->query($sql);
 
 $return = "";
 
-if ($result->num_rows > 0)
+if ($result->num_rows <= 0
 {
-    $return =0;
+    $return = 0;
 }
 else
 {
-    $sql = 'UPDATE Account SET Nickname = "' . $newNickname . '" WHERE Nickname = "' . $oldNickname . '";';
+    $sql = 'UPDATE Account SET Mail = "' . $Mail . '" WHERE Nickname = "' . $Nickname . '";';
 
     $conn->query($sql);
     $return = 1;
 }
-
 
 echo json_encode($return);
 
