@@ -412,7 +412,7 @@ $(function()
     {
         if ($('#txtKommentar').val().trim() != "")
         {
-            $.post( "../PHP/sendComment.php", { Nickname: loggedNick, Comment: $('#txtKommentar').val() }).done( function(returnValue)
+            $.post( "../PHP/sendComment.php", { Nickname: loggedNick, Comment: $('#txtKommentar').val().replace(/'/g, '').replace(/"/g, '') }).done( function(returnValue)
             {
                 if (returnValue == 0)
                 {
@@ -430,7 +430,7 @@ $(function()
     {
         if ($('#txtChat').val().trim() != "")
         {
-            $.post( "../PHP/sendChat.php", { Nickname: loggedNick, Text: $('#txtChat').val() }).done( function(returnValue)
+            $.post( "../PHP/sendChat.php", { Nickname: loggedNick, Text: $('#txtChat').val().replace(/'/g, '').replace(/"/g, '') }).done( function(returnValue)
             {
                 if (returnValue == 0)
                 {
