@@ -320,6 +320,68 @@
     height: 50vh;
     width: 100%;
     border-style: solid;
+    overflow:auto;
+}
+
+
+.row .own-nick
+{
+    color: white;
+    background-color: dodgerblue;
+    display: inline-block;
+    float: right;
+    display: hidden;
+    margin: inherit;
+    text-align: right;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 5px;
+}
+
+.row .own-text
+{
+    color: white;
+    padding: 5px;
+    background-color: dodgerblue;
+    margin: inherit;
+    width: 90%;
+    float: right;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-bottom: 5px;
+}
+
+.row .other-nick
+{
+    color: white;
+    background-color: gray;
+    display: inline-block;
+    float: left;
+    display: hidden;
+    margin: inherit;
+    text-align: left;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 5px;
+}
+
+.row .other-text
+{
+    color: white;
+    padding: 5px;
+    background-color: gray;
+    margin: inherit;
+    width: 90%;
+    float: left;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-bottom: 5px;
 }
 
 #txtChat

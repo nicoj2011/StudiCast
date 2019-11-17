@@ -12,14 +12,15 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$nickname = $_POST['nickname'];
-$password = $_POST['password'];
+$nickname = $_POST['Nickname'];
+$text = $_POST['Text'];
+$serverDate = date('Y-m-j h:i:s', $_SERVER['REQUEST_TIME']);
 
 $sql = 'SELECT * FROM Account WHERE Nickname = "' . $nickname . '";';
 
 $result = $conn->query($sql);
 
-$return = 0;
+$return = "";
 
 if ($result->num_rows <= 0)
 {
@@ -29,18 +30,13 @@ else
 {
     while($row = $result->fetch_assoc())
     {
-       if ($row["Passwort"] == $password)
-       {
-           session_start();
-           $_SESSION['nickname'] = $nickname;
-           $_SESSION['date'] = date('Y-m-j h:i:s', $_SERVER['REQUEST_TIME']);
-           $return = "|" . $row['Nickname'] . "|" . $row['Mail'] . "|" . $row['Bild'] . "|" . $row['Rolle'] . "|" . $_SESSION['nickname'] . "|";
-       }
+         $sql = 'INSERT INTO Chat (AccID, Text, Date) VALUES ("' . $row['ID'] . '", "' . $text . '", "' . $serverDate . '");';
     }
+
+    $conn->query($sql);
+    $return = $text;
 }
 
 echo json_encode($return);
 
 ?>
-
-

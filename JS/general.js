@@ -1,7 +1,15 @@
+var loggedNickn;
+var loggedMail;
+var loggedImg;
+var loggedRole;
+
+
 $(document).ready ( function()
 {
     tabs("Podcast");
     toggledLogin = false;
+
+    sessionCheck();
 
     loadComments(10);
 
@@ -9,12 +17,7 @@ $(document).ready ( function()
 
     $(".kommentarBild").css({'height':$(".kommentarBild").width()+'px'});
 
-});
-
-var loggedNickn;
-var loggedMail;
-var loggedImg;
-var loggedRole;
+    setInterval (loadChat, 2500);
 
 
 function tabs(tab)
@@ -148,6 +151,8 @@ $(function()
         loggedRole = "";
 
         disabled(true);
+
+        $.post( "../PHP/sendComment.php", { });
     });
 });
 
@@ -281,6 +286,7 @@ $(function()
 
                         $('#loggedNick').html(loggedNick);
 
+                        loadChat();
 
                         disabled(false);
                     }
@@ -381,8 +387,6 @@ $(function()
                     returnValue = returnValue.replace('"', '');
                     loggedImg = returnValue.replace('"', '');
 
-                    console.log(loggedImg);
-
                     $('#profilBild').css({
                         'border-radius': '5%',
                         'background-color': 'black',
@@ -412,11 +416,29 @@ $(function()
             {
                 if (returnValue == 0)
                 {
-                    console.log("err");
                 }
                 else
                 {
                     loadComments(10);
+                }
+
+            });
+        }
+    });
+
+    $( "#btnChat" ).click(function()
+    {
+        if ($('#txtChat').val().trim() != "")
+        {
+            $.post( "../PHP/sendChat.php", { Nickname: loggedNick, Text: $('#txtChat').val() }).done( function(returnValue)
+            {
+                if (returnValue == 0)
+                {
+                }
+                else
+                {
+                    $('#txtChat').val("");
+                    loadChat();
                 }
 
             });
@@ -438,9 +460,93 @@ function loadComments(count)
     });
 }
 
+function sessionCheck()
+{
+    $.post( "../PHP/sessionCheck.php", { }).done( function(returnValue)
+    {
 
+        if (returnValue == 0)
+        {
+            $.post( "../PHP/logOut.php", { });
+        }
+        else
+        {
+            $('#loginDiv').css("display", "none");
+            $('#profilBTN').css("display", "none");
 
+            loggedNick = returnValue.split("|")[1];
+            loggedMail = returnValue.split("|")[2];
+            loggedImg = returnValue.split("|")[3];
+            loggedRole = returnValue.split("|")[4];
 
+            $('#profilBild').css({
+            'border-radius': '5%',
+            'background-color': 'black',
+            'background-image': 'url(../IMG/Profil/' + loggedImg + ')',
+            'background-size': '100% auto',
+            'background-repeat': 'no-repeat',
+            'background-position': 'center',
+            'padding-top': '89%',
+            'width': '100%'
+            });
 
+            $('#profilBild').show("Blind");
 
+            $('#loggedNick').html(loggedNick);
 
+            disabled(false);
+        }
+
+    });
+}
+
+function loadChat()
+{
+    $.post( "../PHP/loadChat.php", { }).done( function(returnValue)
+    {
+        if(returnValue == 0)
+        {
+
+        }
+        else
+        {
+            $('#chat').empty();
+
+            rowKommentar = returnValue.split('~');
+
+            returnValue.split('~').forEach(function(element)
+            {
+                if (element == '"0' || element == '0"')
+                {
+                }
+                else
+                {
+                    chatNick = element.split("|")[0];
+                    chatDate = element.split("|")[1].split(" ")[1];
+                    chatText = element.split("|")[2];
+
+                    if (chatNick == loggedNick)
+                    {
+                        user = 'own';
+                    }
+                    else
+                    {
+                        user = 'other';
+                    }
+
+                $('#chat').append(''
+                + '<div class="row ' + user + '-nick">'
+                + chatNick + ':' // + '<br> (' + chatDate + ')'
+                + '</div>'
+                + '<div class="row ' + user + '-text">'
+                + chatText
+                + '</div>');
+                }
+            });
+
+            $("#chat").animate({ scrollTop: $('#chat').prop("scrollHeight")}, 1000);
+        }
+    });
+}
+
+});
