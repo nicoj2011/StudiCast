@@ -23,7 +23,7 @@ $(document).ready ( function()
 function tabs(tab)
 {
      $ ( ".tabs").css("display", "none");
-     $ ( ".btn-light").css("color", "rgba(0,0,0,0.3)");
+     $ ( ".nav-item .btn-light").css("color", "rgba(0,0,0,0.3)");
 
     if(tab == "Podcast")
         {

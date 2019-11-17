@@ -59,7 +59,7 @@
         </header>
 
 
-        <div class="container-fluid">
+        <div class="container-fluid" id="headImg">
            <div class="container">
                <div class="row align-items-end" id="headline">
                     <div class="col-md-6">
@@ -307,8 +307,43 @@
             </div>
         </div>
 
-        <footer class="container">
+        <footer class="container-fluid">
+            <div class="row" id="footerPartOne">
+                <div class="container">
+                    <div class="row" id="footerPartOneRow">
+                       <div class="col" id="fTabs">
+                            <button class="btn btn-light" onclick="tabs('Podcast')" id="fTabPodcast">Podcast</button>
 
+                            <button class="btn btn-light" onclick="tabs('News')" id="fTabNews">News</button>
+
+                            <button class="btn btn-light" onclick="tabs('Archiv')" id="fTabArchiv">Archiv</button>
+
+                            <button class="btn btn-light" onclick="tabs('Umfrage')" id="fTabUmfrage">Umfrage</button>
+
+                            <button class="btn btn-light" onclick="tabs('Kontakt')" id="fTabKontakt">Kontakt</button>
+                        </div>
+                        <div class="col" id="fLogos">
+                                <div class="row" id="footerPartOneStudiCast">
+                                    <img src="./IMG/Logo.jpg">
+                                </div>
+                                <div class="row" id="footerPartOneCoop">
+                                    In Kooperation mit
+                                </div>
+                                <div class="row" id="footerPartOneDHBW">
+                                    <img src="./IMG/Logo.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="footerPartTwo">
+                <div class="container" >
+                    <div class="row" id="footerPartTwoRow">
+                        <div class="col-2" id="footerLogoGray"></div>
+                        <div class="col" id="footerCopyright"> @ 2019 Duale Hochschule Baden-Württemberg</div>
+                    </div>
+                </div>
+            </div>
         </footer>
     </body>
 </html>

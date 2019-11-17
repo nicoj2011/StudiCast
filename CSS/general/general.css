@@ -40,7 +40,7 @@
     font-size: 20px;
 }
 
-.container-fluid
+#headImg
 {
     background-image: url(../../IMG/test.jpg);
     background-size: 100% auto;
@@ -86,7 +86,6 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
-
 .kommentarBild
 {
 
@@ -101,24 +100,16 @@
 
 }
 
-.clo-3
-{
-
-}
-
-
 #profil
 {
     display: flex;
     justify-content: space-around;
     width: 100%;
 }
-
 #profilBild
 {
     display:none;
 }
-
 #profilBTN
 {
 	border-radius:6px;
@@ -128,7 +119,6 @@
     justify-content: space-around;
     width: 100%;
 }
-
 #loggedNick
 {
     font-size: 130%;
@@ -137,7 +127,6 @@
     width: 100%;
     text-align: center;
 }
-
 #loginDiv
 {
     display: none;
@@ -155,22 +144,18 @@
     display: none;
 
 }
-
 #changeNameAlert
 {
     border-radius: 0;
 }
-
 #changePasswordAlert
 {
     border-radius: 0;
 }
-
 #changeMailAlert
 {
     border-radius: 0;
 }
-
 #changeImgAlert
 {
     border-radius: 0;
@@ -182,46 +167,38 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
-
 #txtName
 {
     width: 100%;
 }
-
 #txtPW
 {
     width: 100%;
 }
-
 #txtPWRepeat
 {
     width: 100%;
 }
-
 #txtMail
 {
     width: 100%;
 }
-
 #divAnmelden
 {
     width: 100%;
     display: none;
 }
-
 #btnAnmelden
 {
     width: 47%;
     font-size: 80%;
 
 }
-
 #btnLogin
 {
     width: 47%;
     font-size: 80%;
 }
-
 .login
 {
     width: 100%;
@@ -322,8 +299,6 @@
     border-style: solid;
     overflow:auto;
 }
-
-
 .row .own-nick
 {
     color: white;
@@ -339,7 +314,6 @@
     padding-bottom: 0px;
     padding-top: 5px;
 }
-
 .row .own-text
 {
     color: white;
@@ -353,7 +327,6 @@
     border-bottom-right-radius: 15px;
     margin-bottom: 5px;
 }
-
 .row .other-nick
 {
     color: white;
@@ -369,7 +342,6 @@
     padding-bottom: 0px;
     padding-top: 5px;
 }
-
 .row .other-text
 {
     color: white;
@@ -383,19 +355,89 @@
     border-bottom-right-radius: 15px;
     margin-bottom: 5px;
 }
-
 #txtChat
 {
     width: 100%;
 }
-
 #btnChat
 {
     width: 100%;
 }
 
-/* Kontakt */
-.form
+
+footer
 {
-    width: 40vw;
+    background-color: rgba(50, 50, 50, 0.9);
+    height: 25vh;
 }
+#footerPartOne
+{
+    height: 80%;
+}
+#footerPartOneRow
+{
+    height: 100%;
+}
+#fTabs
+{
+    display:grid;
+}
+#fTabs button
+{
+    color: #888;
+}
+#fLogos div
+{
+    margin: auto;
+}
+#footerPartOneStudiCast img
+{
+    margin-top: 5%;
+    /* background-image: url("../../IMG/Logo.jpg");
+    background-size: auto 100%;
+    background-repeat: no-repeat; */
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    width: 40%;
+    margin-bottom: 2%;
+}
+#footerPartOneCoop
+{
+    color: #888;
+    padding-left: 5%;
+}
+#footerPartOneDHBW
+{
+
+}
+#footerPartOneDHBW img
+{
+    margin-top: 2%;
+    margin-bottom: 5%;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    width: 40%;
+}
+#footerPartTwo
+{
+    height: 20%;
+    background-color: rgba(50, 50, 50, 0.8);
+}
+#footerPartTwoRow
+{
+    height: 100%;
+}
+#footerLogoGray
+{
+    background-image: url("../../IMG/logo.png");
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+#footerCopyright
+{
+    color: #888;
+    margin: auto;
+    float: left;
+}
+
+
+
