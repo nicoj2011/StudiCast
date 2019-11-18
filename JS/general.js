@@ -19,9 +19,11 @@ $(document).ready ( function()
 
     setInterval (loadChat, 2500);
 
+});
 
 function tabs(tab)
 {
+    console.log('der');
      $ ( ".tabs").css("display", "none");
      $ ( ".nav-item .btn-light").css("color", "rgba(0,0,0,0.3)");
 
@@ -549,4 +551,3 @@ function loadChat()
     });
 }
 
-});

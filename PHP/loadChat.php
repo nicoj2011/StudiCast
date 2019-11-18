@@ -15,12 +15,15 @@ if (!$conn)
     die("Connection failed: " . mysqli_connect_error());
 }
 
+if (!$_SESSION['date'])
+{
+}
+else
+{
 $sessionDate = $_SESSION['date'];
 $serverDate = date('Y-m-j h:i:s', $_SERVER['REQUEST_TIME']);
 
 $sql = 'SELECT a.Nickname, c.Text, c.Date FROM Chat c, Account a WHERE c.AccID = a.ID AND c.Date BETWEEN "' . $sessionDate . '" AND "' . $serverDate . '" ORDER BY Date ASC;';
-
-//$sql = 'SELECT a.Nickname, c.Text, c.Date FROM Chat c, Account a WHERE c.AccID = a.ID ORDER BY Date ASC;';
 
 $result = $conn->query($sql);
 
@@ -40,4 +43,5 @@ else
 
 echo json_encode($return . "~0");
 
+}
 ?>

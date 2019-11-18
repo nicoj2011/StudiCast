@@ -302,7 +302,7 @@
 .row .own-nick
 {
     color: white;
-    background-color: dodgerblue;
+    background-color: red;
     display: inline-block;
     float: right;
     display: hidden;
@@ -318,7 +318,7 @@
 {
     color: white;
     padding: 5px;
-    background-color: dodgerblue;
+    background-color: red;
     margin: inherit;
     width: 90%;
     float: right;
