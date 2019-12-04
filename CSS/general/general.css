@@ -3,12 +3,10 @@
 {
     height: 5px;
 }
-
 .btn-outline-dark
 {
 	border-color: rgba(0,0,0,0.3)
 }
-
 .btn-light
 {
     background-color: rgba(255, 255, 255, 0);
@@ -16,28 +14,27 @@
     border-style: hidden;
     border-color: rgba(0,0,0,0.3);
 }
-
-
-
-.nav-item
-{
-   margin-right: 5px;
-}
-
 .btn-light:focus
 {
     border-style: none;
     box-shadow: inherit;
 }
-
 .btn-outline-dark:focus
 {
     box-shadow: inherit;
+}
+.row
+{
+    margin: 0;
 }
 
 #headerBrand
 {
     font-size: 20px;
+}
+.nav-item
+{
+   margin-right: 5px;
 }
 
 #headImg
@@ -47,18 +44,15 @@
     background-repeat: no-repeat;
     min-height: 45vh;
 }
-
 #headline
 {
     height: 45vh;
 }
-
 .col-md-6 studi
 {
     color: rgba(255, 255, 255, 0.7);
     font-size: 5vh;
 }
-
 .col-md-6 cast
 {
     color: rgba(255, 23, 23, 0.7);
@@ -69,12 +63,10 @@
 {
     width: 100vw;
 }
-
 .col-9 audio
 {
     width: 100%;
 }
-
 .tabsInactiv
 {
     display: none;
@@ -166,6 +158,7 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    height: 100%;
 }
 #txtName
 {
@@ -183,6 +176,8 @@
 {
     width: 100%;
 }
+
+
 #divAnmelden
 {
     width: 100%;
@@ -190,14 +185,16 @@
 }
 #btnAnmelden
 {
-    width: 47%;
-    font-size: 80%;
+    width: 100%;
+    /*margin-right: 5px;*/
+    font-size: 100%;
 
 }
 #btnLogin
 {
-    width: 47%;
-    font-size: 80%;
+    width: 100%;
+    /*margin-left: 5px;*/
+    font-size: 100%;
 }
 .login
 {
@@ -439,5 +436,46 @@ footer
     float: left;
 }
 
+
+/*  KONTAKT */
+
+
+#contactFirstname
+{
+   width: 100%;
+}
+#contactLastname
+{
+   width: 100%;
+}
+#contactMail
+{
+   width: 100%;
+}
+#contactSubject
+{
+   width: 100%;
+}
+#contactMessage
+{
+   width: 100%;
+}
+.txtKontakt
+{
+    width: 100%;
+}
+#contactMessageArea
+{
+    width: 100%;
+    border-radius: 0;
+    resize: none;
+    overflow: auto;
+}
+#btnKontaktSend
+{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    width: 100%;
+}
 
 

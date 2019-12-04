@@ -1,5 +1,8 @@
 <?php
-$servername = "vweb10.nitrado.net";
+
+$connInfo = file("connection.txt");
+
+$servername = $connInfo[0].split(':')[1];
 $username = "ni1243592_1sql1";
 $password = "meiner";
 $dbName = "ni1243592_1sql1";

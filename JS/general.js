@@ -21,6 +21,12 @@ $(document).ready ( function()
 
 });
 
+$(window).on('resize', function()
+{
+    onResize();
+});
+
+
 function tabs(tab)
 {
     console.log('der');
@@ -129,11 +135,6 @@ $(function()
             }
     });
 
-    $(window).on('resize', function()
-    {
-      $(".kommentarBild").css({'height':$(".kommentarBild").width()+'px'});
-    });
-
     $( "#btnLogout" ).click(function()
     {
         //$('#loginDiv').css("display", "none");
@@ -157,6 +158,28 @@ $(function()
         $.post( "../PHP/sendComment.php", { });
     });
 });
+
+function onResize ()
+{
+    $(".kommentarBild").css({'height':$(".kommentarBild").width()+'px'});
+
+    btnWidth = $('#btnLogin').width();
+    divWidth = 0.47 * $('.login-flex').width();
+
+    console.log(btnWidth);
+    console.log(divWidth);
+
+    if (btnWidth < divWidth)
+    {
+        console.log ('Button: ' + btnWidth + " | Div:" + divWidth);
+    }
+    else
+    {
+        console.log ('Button: ' + btnWidth + " | Div:" + divWidth);
+    }
+
+
+}
 
 function kommentar (returnValue)
 {

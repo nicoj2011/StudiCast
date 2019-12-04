@@ -287,23 +287,74 @@
 
                         <h3>Kontakt</h3>
 
-                       <h5>Wer sind wir:</h5>
+                        <h5>Wer sind wir:</h5>
+
+                        <br>
 
                         <p>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                         </p>
-                        <form>
-                             <table>
-                                <tr><td>Name:</td><td class="form"><input type="text"> </td></tr>
-                                <tr><td>Mail:</td><td class="form"><input type="email"></td></tr>
-                                <tr><td>Betreff:</td><td class="form"><input type="text"></td></tr>
-                                <tr><td>Text:</td><td class="form"><textarea class="form-control" id="send" rows="3"></textarea></td></tr>
-                            </table>
-                        </form>
+
+                        <br>
+
+                        <h5>Anfrage</h5>
+
+                        <p>
+                            Wenn ihr Bock habt ein Teil unseres Podcasts zu werden oder einfach Anregungen für den nächsten Podcast habt, dann schreibt uns einfach:
+                        </p>
+                        <br>
+                        <div class="row">
+                            <div class="row" id="contactFirstname">
+                                <div class="col-3" id="hFirstname">
+                                    Vorname:
+                                </div>
+                                <div class="col">
+                                    <input class="txtKontakt" type="text" placeholder="Max">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row" id="contactLastname">
+                                <div class="col-3">
+                                    Nachname:
+                                </div>
+                                <div class="col">
+                                    <input class="txtKontakt" type="text" placeholder="Mustermann">
+                                </div>
+                            </div>
+                            <div class="row" id="contactMail">
+                                <div class="col-3">
+                                    E-Mail:
+                                </div>
+                                <div class="col">
+                                    <input class="txtKontakt" type="text" placeholder="max.mustermann@mustermann.max">
+                                </div>
+                            </div>
+                            <div class="row" id="contactSubject">
+                                <div class="col-3">
+                                    Betreff:
+                                </div>
+                                <div class="col">
+                                    <input class="txtKontakt" type="text" placeholder="Anfrage">
+                                </div>
+                            </div>
+                            <div class="row" id="contactMessage">
+                                <div class="col-3">
+                                    E-Mail:
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <textarea class="form-control" id="contactMessageArea" rows="8"></textarea>
+                                    </div>
+                                    <div class="row">
+                                        <button class="btn btn-outline-dark" id="btnKontaktSend">Abschicken</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-
+                <!-- Seitenleiste -->
                 <div class="col-3">
                     <div>
                         <br>
@@ -382,15 +433,14 @@
                             <input placeholder="Name" id="txtName" type="text" tabindex="1">
 
                             <input placeholder="Passwort" id="txtPW" type="password" tabindex="2">
+
                             <div id="divAnmelden">
                                 <input placeholder="Passwort Wiederholen" id="txtPWRepeat" type="password">
 
                                 <input placeholder="E-Mail" id="txtMail" type="email">
                             </div>
 
-                            <div class="spacer">
-
-                            </div>
+                            <div class="spacer"></div>
 
                             <div class="login-flex">
                                 <button id="btnAnmelden" class="btn btn-outline-dark">Anmelden</button>
