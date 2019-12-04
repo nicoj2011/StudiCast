@@ -1,4 +1,4 @@
-var loggedNickn;
+var loggedNick;
 var loggedMail;
 var loggedImg;
 var loggedRole;
@@ -83,6 +83,16 @@ function alert(div, text, color)
 
 $(function()
   {
+
+    $('#btnTest').click(function()
+    {
+        console.log("der");
+        $.post( "../PHP/general.php", { }).done( function(returnValue)
+        {
+            console.log(returnValue);
+        });
+    });
+
     $( "#profilBTN" ).click(function()
     {
 
@@ -110,6 +120,7 @@ $(function()
     $( "#btnChangeName" ).click(function()
     {
         $( "#divChangeName" ).toggle( "blind" );
+        $( '#txtNameChange' ).val(loggedNick);
     });
 
     $( "#btnChangePassword" ).click(function()
@@ -120,6 +131,7 @@ $(function()
     $( "#btnChangeMail" ).click(function()
     {
         $( "#divChangeMail" ).toggle( "blind" );
+        $( "#txtMailChange" ).val(loggedMail);
     });
 
      $( "#btnChangeImg" ).click(function()
@@ -153,9 +165,11 @@ $(function()
         loggedImg = "";
         loggedRole = "";
 
+        $( '#chat' ).empty();
+
         disabled(true);
 
-        $.post( "../PHP/sendComment.php", { });
+        $.post( "../PHP/logOut.php", { });
     });
 });
 
@@ -244,7 +258,7 @@ $(function()
                             }
                         else
                             {
-                                $.post( "../PHP/signUp.php", { nickname: $("#txtName").val(),  password: $("#txtPW").val(),  mail: $("#txtMail").val()}).done( function(returnValue)
+                                $.post( "../PHP/signUp.php", { nickname: $("#txtName").val().replace(/'/g, '').replace(/"/g, ''),  password: $("#txtPW").val().replace(/'/g, '').replace(/"/g, ''),  mail: $("#txtMail").val().replace(/'/g, '').replace(/"/g, '')}).done( function(returnValue)
                                 {
                                     if(returnValue == 0)
                                         {
@@ -278,7 +292,7 @@ $(function()
             }
         else if ($('#btnLogin').text() == "Login")
             {
-                $.post( "../PHP/login.php", { nickname: $("#txtName").val(),  password: $("#txtPW").val(),  mail: $("#txtMail").val()}).done( function(returnValue)
+                $.post( "../PHP/login.php", { nickname: $("#txtName").val().replace(/'/g, '').replace(/"/g, ''),  password: $("#txtPW").val().replace(/'/g, '').replace(/"/g, ''),  mail: $("#txtMail").val().replace(/'/g, '').replace(/"/g, '')}).done( function(returnValue)
                 {
                     if(returnValue == 0)
                     {
@@ -325,7 +339,7 @@ $(function()
 
         if ($('#txtNameChange').val().trim() != "")
             {
-            $.post( "../PHP/changeName.php", { newNickname: $('#txtNameChange').val(), oldNickname: loggedNick }).done( function(returnValue)
+            $.post( "../PHP/changeName.php", { newNickname: $('#txtNameChange').val().replace(/'/g, '').replace(/"/g, ''), oldNickname: loggedNick }).done( function(returnValue)
             {
 
                 if (returnValue == 0)
@@ -337,6 +351,7 @@ $(function()
                     loggedNick = $('#txtNameChange').val();
                     alert('#changeNameAlert', 'Name wurde zu "' + loggedNick + '" geändert.', 'forestgreen');
                     $('#loggedNick').html(loggedNick);
+                    $('#txtNameChange').val("");
                 }
             });
             }
@@ -352,7 +367,7 @@ $(function()
 
         if ($('#txtPasswordChange').val().trim() != "")
             {
-            $.post( "../PHP/changePassword.php", { Password: $('#txtPasswordChange').val(), Nickname: loggedNick }).done( function(returnValue)
+            $.post( "../PHP/changePassword.php", { Password: $('#txtPasswordChange').val().replace(/'/g, '').replace(/"/g, ''), Nickname: loggedNick }).done( function(returnValue)
             {
                 alert('#changePasswordAlert', 'Passwort wurde geändert.', 'forestgreen');
                 $('#txtPasswordChange').val("");
@@ -375,7 +390,8 @@ $(function()
                          $.post( "../PHP/changeMail.php", { Mail: $('#txtMailChange').val(), Nickname: loggedNick }).done( function(returnValue)
                     {
                         alert('#changeMailAlert', 'Mail wurde geändert.', 'forestgreen');
-                        $('#txtPasswordChange').val("");
+                        loggedMail = $('#txtMailChange').val();
+                        $('#txtMailChange').val("");
                     });
                 }
                 else
@@ -445,6 +461,7 @@ $(function()
                 else
                 {
                     loadComments(10);
+                    $( '#txtKommentar' ).val('');
                 }
 
             });
@@ -496,6 +513,7 @@ function sessionCheck()
         }
         else
         {
+            console.log(returnValue);
             $('#loginDiv').css("display", "none");
             $('#profilBTN').css("display", "none");
 
@@ -535,6 +553,7 @@ function loadChat()
         }
         else
         {
+
             $('#chat').empty();
 
             rowKommentar = returnValue.split('~');

@@ -1,4 +1,4 @@
-server:vweb10.nitrado.net
-username:ni1243592_1sql1
-password:meiner
-db:ni1243592_1sql1
+server:vweb10.nitrado.net;
+username:ni1243592_1sql1;
+password:meiner;
+db:ni1243592_1sql1;

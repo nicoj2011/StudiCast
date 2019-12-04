@@ -39,15 +39,20 @@
 
 #headImg
 {
+    padding-top: 25%;
     background-image: url(../../IMG/test.jpg);
     background-size: 100% auto;
     background-repeat: no-repeat;
-    min-height: 45vh;
+    position: relative;
 }
-#headline
+
+#headContainer
 {
-    height: 45vh;
+    margin-top: -5vh;
+    position: relative;
+    bottom: 0;
 }
+
 .col-md-6 studi
 {
     color: rgba(255, 255, 255, 0.7);
