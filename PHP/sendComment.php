@@ -22,8 +22,6 @@ while ( $connInfo = fgets ($connInfos, 4096 ))
     }
 }
 
-fclose($connInfos);
-
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -33,14 +31,14 @@ if (!$conn)
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$nickname = $conn -> real_escape_string($_POST['nickname']);
-$password = $conn -> real_escape_string($_POST['password']);
+$nickname = $conn -> real_escape_string($_POST['Nickname']);
+$text = $conn -> real_escape_string($_POST['Comment']);
 
 $sql = 'SELECT * FROM Account WHERE Nickname = "' . $nickname . '";';
 
 $result = $conn -> query($sql);
 
-$return = 0;
+$return = "";
 
 if ($result -> num_rows <= 0)
 {
@@ -50,14 +48,11 @@ else
 {
     while($row = $result -> fetch_assoc())
     {
-       if ($row["Passwort"] == $password)
-       {
-           session_start();
-           $_SESSION['nickname'] = $nickname;
-           $_SESSION['date'] = date('Y-m-j h:i:s', $_SERVER['REQUEST_TIME']);
-           $return = "|" . $row['Nickname'] . "|" . $row['Mail'] . "|" . $row['Bild'] . "|" . $row['Rolle'] . "|" . $_SESSION['nickname'] . "|";
-       }
+         $sql = 'INSERT INTO Kommentar (AccID, Text) VALUES ("' . $row['ID'] . '", "' . $text . '");';
     }
+
+    $conn -> query($sql);
+    $return = $text;
 }
 
 echo json_encode($return);
@@ -65,5 +60,3 @@ echo json_encode($return);
 $conn -> close();
 
 ?>
-
-

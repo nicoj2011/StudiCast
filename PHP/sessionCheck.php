@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $connInfos = fopen ("connection.txt", "r");
 
@@ -22,7 +23,6 @@ while ( $connInfo = fgets ($connInfos, 4096 ))
     }
 }
 
-fclose($connInfos);
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -33,37 +33,35 @@ if (!$conn)
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$nickname = $conn -> real_escape_string($_POST['nickname']);
-$password = $conn -> real_escape_string($_POST['password']);
-
-$sql = 'SELECT * FROM Account WHERE Nickname = "' . $nickname . '";';
-
-$result = $conn -> query($sql);
-
-$return = 0;
-
-if ($result -> num_rows <= 0)
+if(!isset($_SESSION['nickname']))
 {
     $return = 0;
 }
 else
 {
-    while($row = $result -> fetch_assoc())
+    $nickname = $_SESSION['nickname'];
+
+    $sql = 'SELECT * FROM Account WHERE Nickname = "' . $nickname . '";';
+
+    $result = $conn -> query($sql);
+
+    $return = "";
+
+    if ($result -> num_rows <= 0)
     {
-       if ($row["Passwort"] == $password)
-       {
-           session_start();
-           $_SESSION['nickname'] = $nickname;
-           $_SESSION['date'] = date('Y-m-j h:i:s', $_SERVER['REQUEST_TIME']);
-           $return = "|" . $row['Nickname'] . "|" . $row['Mail'] . "|" . $row['Bild'] . "|" . $row['Rolle'] . "|" . $_SESSION['nickname'] . "|";
-       }
+        $return = $_SESSION['nickname'];
     }
+    else
+    {
+        while($row = $result -> fetch_assoc())
+        {
+        $return = "|" . $row['Nickname'] . "|" . $row['Mail'] . "|" . $row['Bild'] . "|" . $row['Rolle'] . "|" . $_SESSION['nickname'] . "|" . $nickname . "|" . $_SESSION['date'] . "|";
+        }
+    }
+
+    echo $return;
 }
 
-echo json_encode($return);
-
 $conn -> close();
-
 ?>
-
 
