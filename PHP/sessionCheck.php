@@ -40,7 +40,6 @@ if(!isset($_SESSION['nickname']))
 else
 {
     $nickname = $_SESSION['nickname'];
-    $_SESSION['date'] = date('Y-m-j h:i:s', $_SERVER['REQUEST_TIME']);
 
     $sql = 'SELECT * FROM Account WHERE Nickname = "' . $nickname . '";';
 

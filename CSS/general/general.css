@@ -1,8 +1,11 @@
-/* Standart */
+/* GENERAL */
 .spacer
 {
     height: 5px;
 }
+/* !GENERAL */
+
+/* BOOTSTRAP OVERRIDE */
 .btn-outline-dark
 {
 	border-color: rgba(0,0,0,0.3)
@@ -27,43 +30,6 @@
 {
     margin: 0;
 }
-
-#headerBrand
-{
-    font-size: 20px;
-}
-.nav-item
-{
-   margin-right: 5px;
-}
-
-#headImg
-{
-    padding-top: 25%;
-    background-image: url(../../IMG/test.jpg);
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    position: relative;
-}
-
-#headContainer
-{
-    margin-top: -5vh;
-    position: relative;
-    bottom: 0;
-}
-
-.col-md-6 studi
-{
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 5vh;
-}
-.col-md-6 cast
-{
-    color: rgba(255, 23, 23, 0.7);
-    font-size: 5vh;
-}
-
 .col-9
 {
     width: 100vw;
@@ -76,59 +42,48 @@
 {
     display: none;
 }
+/* !BOOTSTRAP OVERRIDE */
 
-.col-2.kommentar
+/* HEADER */
+#headerBrand
 {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    font-size: 20px;
 }
-.kommentarBild
+.nav-item
 {
+   margin-right: 5px;
+}
+/* !HEADER */
 
-    border-radius: 5%;
-    background-color: black;
-    /* background-image: url("../../IMG/test.jpg"); */
+/* FRONTIMAGE */
+#headImg
+{
+    padding-top: 25%;
+    background-image: url(../../IMG/test.jpg);
     background-size: 100% auto;
     background-repeat: no-repeat;
-    background-position: center;
-    padding-top: 89%;
-    width: 100%;
+    position: relative;
+}
+#headContainer
+{
+    margin-top: -5vh;
+    position: relative;
+    bottom: 0;
+}
+.col-md-6 studi
+{
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 5vh;
+}
+.col-md-6 cast
+{
+    color: rgba(255, 23, 23, 0.7);
+    font-size: 5vh;
+}
+/* !FRONTIMAGE */
 
-}
-
-#profil
-{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-}
-#profilBild
-{
-    display:none;
-}
-#profilBTN
-{
-	border-radius:6px;
-	border:1px solid #dcdcdc;
-	text-shadow:0px 1px 0px #ffffff;
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-}
-#loggedNick
-{
-    font-size: 130%;
-    font-weight: 100;
-    height: 100%;
-    width: 100%;
-    text-align: center;
-}
-#loginDiv
-{
-    display: none;
-}
-
+/* !SIDEPANEL! */
+/* ALERTS */
 .MyAlerts
 {
     background-color: forestgreen;
@@ -158,6 +113,11 @@
     border-radius: 0;
 }
 
+/* LOGIN && SIGNUP */
+#loginDiv
+{
+    display: none;
+}
 .login-flex
 {
     display: flex;
@@ -181,8 +141,6 @@
 {
     width: 100%;
 }
-
-
 #divAnmelden
 {
     width: 100%;
@@ -191,21 +149,51 @@
 #btnAnmelden
 {
     width: 100%;
-    /*margin-right: 5px;*/
     font-size: 100%;
-
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
 #btnLogin
 {
     width: 100%;
-    /*margin-left: 5px;*/
     font-size: 100%;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-top-style: none;
 }
 .login
 {
     width: 100%;
 }
 
+/* ACCOUNT */
+#profil
+{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+#profilBild
+{
+    display:none;
+}
+#profilBTN
+{
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	text-shadow:0px 1px 0px #ffffff;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+#loggedNick
+{
+    font-size: 130%;
+    font-weight: 100;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
 #account
 {
     display: none;
@@ -292,6 +280,7 @@
     border-radius: 0;
 }
 
+/* CHAT */
 #chat
 {
     border-color: rgba(200,200,200,0.5);
@@ -365,86 +354,32 @@
 {
     width: 100%;
 }
+/* !SIDEPANEL */
 
-
-footer
+/* CONTENT */
+/* PODCAST */
+.col-2.kommentar
 {
-    background-color: rgba(50, 50, 50, 0.9);
-    height: 25vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
-#footerPartOne
-{
-    height: 80%;
-}
-#footerPartOneRow
-{
-    height: 100%;
-}
-#fTabs
-{
-    display:grid;
-}
-#fTabs button
-{
-    color: #888;
-}
-#fLogos div
-{
-    margin: auto;
-}
-#footerPartOneStudiCast img
-{
-    margin-top: 5%;
-    /* background-image: url("../../IMG/Logo.jpg");
-    background-size: auto 100%;
-    background-repeat: no-repeat; */
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    width: 40%;
-    margin-bottom: 2%;
-}
-#footerPartOneCoop
-{
-    color: #888;
-    padding-left: 5%;
-}
-#footerPartOneDHBW
+.kommentarBild
 {
 
-}
-#footerPartOneDHBW img
-{
-    margin-top: 2%;
-    margin-bottom: 5%;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    width: 40%;
-}
-#footerPartTwo
-{
-    height: 20%;
-    background-color: rgba(50, 50, 50, 0.8);
-}
-#footerPartTwoRow
-{
-    height: 100%;
-}
-#footerLogoGray
-{
-    background-image: url("../../IMG/logo.png");
-    background-size: auto 100%;
+    border-radius: 5%;
+    background-color: black;
+    /* background-image: url("../../IMG/test.jpg"); */
+    background-size: 100% auto;
     background-repeat: no-repeat;
-    height: 100%;
-}
-#footerCopyright
-{
-    color: #888;
-    margin: auto;
-    float: left;
-}
+    background-position: center;
+    padding-top: 89%;
+    width: 100%;
 
+}
+/* !PODCAST */
 
 /*  KONTAKT */
-
-
 #contactFirstname
 {
    width: 100%;
@@ -482,5 +417,72 @@ footer
     border-top-right-radius: 0;
     width: 100%;
 }
+/* !CONTENT */
+
+/* FOOTER */
+footer
+{
+    min-height: 5vh;
+    background-color: rgba(50, 50, 50, 0.9);
+}
+#fLogo
+{
+    margin-top: 1px;
+    background-image: url("../../IMG/logo.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 4.5vh;
+}
+#fCopyright
+{
+    color: #888;
+    margin: auto;
+    float: left;
+}
+/* !FOOTER */
+
+/* FOOTER MENU */
+#fMenuContainer
+{
+    background-color: rgba(50, 50, 50, 0.8);
+    height: 20vh;
+}
+#fMenuContainer
+{
+    display: flex;
+
+}
+.col.fMenu
+{
+    height: 20vh;
+}
+.row.fMenu
+{
+    height: 20%;
+}
+.row.fMenu button
+{
+    color: #888;
+    width: 100%;
+    border-color: #888;
+    border-bottom-style: solid;
+    border-bottom-style: none;
+}
+#fMenuLabel
+{
+    margin-top: 2.5%;
+    color: #888;
+    font-size: 1.5vh;
+    text-align: center;
+    height: 100%;
+}
+#fMenuLogo
+{
+    height: 80%;
+    background-image: url("../../IMG/Logo.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 80%;
+}
+/* !FOOTER MENU */
 
 
