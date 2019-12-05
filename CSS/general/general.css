@@ -379,6 +379,31 @@
 }
 /* !PODCAST */
 
+/* ARCHIVS */
+.col-4.archivs
+{
+    height: 100%;
+}
+.col-4.archive div
+{
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 100%;
+}
+#archive1
+{
+    background-image: url(http://wordpress.p219687.webspaceconfig.de/wp-content/uploads/2014/02/Team-Member-1.jpg);
+}
+#archive2
+{
+    background-image: url(https://www.kba.de/SharedDocs/Bilder/DE/Passbild/bsp_passbild2.jpg?__blob=normal&v=2);
+}
+#archive3
+{
+    background-image: url(http://flint-data.com/wp-content/uploads/2017/08/sebastian-t.jpg);
+}
+/* !ARCHIVS */
+
 /*  KONTAKT */
 #contactFirstname
 {
