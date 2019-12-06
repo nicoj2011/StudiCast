@@ -21,13 +21,19 @@ $(document).ready ( function()
 
     setInterval (loadChat, 2500);
 
+
+});
+/* !START */
+
+/* EVENTS */
+$(function()
+{
     $( "#profilBTN" ).click(function()
     {
 
         $( "#loginDiv" ).toggle( "blind" );
 
     });
-
     $( "#btnAnmelden" ).click(function()
     {
 
@@ -44,29 +50,24 @@ $(document).ready ( function()
                 $('#btnLogin').text("Login");
             }
     });
-
     $( "#btnChangeName" ).click(function()
     {
         $( "#divChangeName" ).toggle( "blind" );
         $( '#txtNameChange' ).val(loggedNick);
     });
-
     $( "#btnChangePassword" ).click(function()
     {
         $( "#divChangePassword" ).toggle( "blind" );
     });
-
     $( "#btnChangeMail" ).click(function()
     {
         $( "#divChangeMail" ).toggle( "blind" );
         $( "#txtMailChange" ).val(loggedMail);
     });
-
      $( "#btnChangeImg" ).click(function()
     {
         $( "#divChangeImg" ).toggle( "blind" );
     });
-
     $( "#profilBild" ).click(function()
     {
         if (loggedNick != "")
@@ -74,10 +75,8 @@ $(document).ready ( function()
                 $( "#account" ).toggle( "blind" );
             }
     });
-
     $( "#btnLogout" ).click(function()
     {
-        //$('#loginDiv').css("display", "none");
         $('#profilBTN').css("display", "inherit");
 
 
@@ -99,14 +98,16 @@ $(document).ready ( function()
 
         $.post( "../PHP/logOut.php", { });
     });
-
     $(window).on('resize', function()
     {
         onResize();
     });
-
+    $( '#btnDeleteSurfey' ).click(function()
+    {
+        deleteSurfey();
+    });
 });
-/* !START */
+/* !EVENTS */
 
 /* FUNCTIONS */
 function isMail(mail)
@@ -118,7 +119,8 @@ function alert(div, text, color)
 {
     $(div).css("background-color", color);
     $(div).html(text);
-    $(div).show("Blind");
+    $(div).show("Blind").delay(10000);
+    $(div).hide("Blind");
 }
 function tabs(tab)
 {
@@ -165,7 +167,18 @@ function onResize ()
     btnWidth = $('#btnLogin').width();
     divWidth = 0.47 * $('.login-flex').width();
 }
+function deleteSurfey ()
+{
+    $( '.sRadio' ).prop('checked', false);
 
+    alert('#surfeyComplete', "-TEST ABGESCHLOSSEN-<br>-UNZUFRIEDEN ABGESCHLOSSEN-<br>-UMFRAGE DATEN ERFOLGREICH GELÖSCHT-<br>-WEITERE TESTS ERFORDERLICH-<br>-FÜHRE DEN TEST ERNEUT AUS FÜR DEN KUCHEN-<br>-GLaDOS-", 'red');
+
+    console.log("Hey, du!");
+    console.log("Ja du...");
+    console.log("Glaub GLaDOS kein Wort!");
+    console.log("Der Kuchen ist eine LÜGE!");
+    console.log("RENN!");
+}
 /* !FUNCTIONS */
 /* !GENERAL */
 

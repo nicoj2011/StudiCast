@@ -3,6 +3,42 @@
 {
     height: 5px;
 }
+
+/* ALERTS */
+.MyAlerts
+{
+    background-color: forestgreen;
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    display: none;
+
+}
+#changeNameAlert
+{
+    border-radius: 0;
+}
+#changePasswordAlert
+{
+    border-radius: 0;
+}
+#changeMailAlert
+{
+    border-radius: 0;
+}
+#changeImgAlert
+{
+    border-radius: 0;
+}
+#surfeyComplete
+{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+/* !ALERTS */
 /* !GENERAL */
 
 /* BOOTSTRAP OVERRIDE */
@@ -82,37 +118,7 @@
 }
 /* !FRONTIMAGE */
 
-/* !SIDEPANEL! */
-/* ALERTS */
-.MyAlerts
-{
-    background-color: forestgreen;
-    height: 100%;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    width: 100%;
-    color: white;
-    text-align: center;
-    display: none;
-
-}
-#changeNameAlert
-{
-    border-radius: 0;
-}
-#changePasswordAlert
-{
-    border-radius: 0;
-}
-#changeMailAlert
-{
-    border-radius: 0;
-}
-#changeImgAlert
-{
-    border-radius: 0;
-}
-
+/* SIDEPANEL */
 /* LOGIN && SIGNUP */
 #loginDiv
 {
@@ -404,6 +410,20 @@
 }
 /* !ARCHIVS */
 
+/* SURFEY */
+#surfeyComment
+{
+    width: 100%;
+    resize: none;
+}
+#btnDeleteSurfey
+{
+    width: 100%;
+    height: 100%;
+}
+
+/* SURFEY */
+
 /*  KONTAKT */
 #contactFirstname
 {
@@ -509,5 +529,3 @@ footer
     background-size: 100% 80%;
 }
 /* !FOOTER MENU */
-
-
