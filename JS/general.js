@@ -110,19 +110,19 @@ $(function()
 /* !EVENTS */
 
 /* FUNCTIONS */
-function isMail(mail)
+function isMail ( mail )
 {
   var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   return regex.test(mail);
 }
-function alert(div, text, color)
+function alert ( div, text, color )
 {
     $(div).css("background-color", color);
     $(div).html(text);
     $(div).show("Blind").delay(10000);
     $(div).hide("Blind");
 }
-function tabs(tab)
+function tabs ( tab )
 {
      $ ( ".tabs").css("display", "none");
      $ ( ".nav-item .btn-light").css("color", "rgba(0,0,0,0.3)");
@@ -153,7 +153,7 @@ function tabs(tab)
             document.getElementById("hTabKontakt").style.color = "rgba(0,0,0,1)";
         }
 }
-function disabled(var1)
+function disabled ( var1 )
 {
     $("#txtChat").prop('disabled', var1);
     $("#btnChat").prop('disabled', var1);
@@ -218,7 +218,12 @@ $(function()
         }
         else if ($('#btnLogin').text() == "Login")
         {
-            $.post( "../PHP/login.php", { nickname: $("#txtName").val().replace(/'/g, '').replace(/"/g, ''),  password: $("#txtPW").val().replace(/'/g, '').replace(/"/g, ''),  mail: $("#txtMail").val().replace(/'/g, '').replace(/"/g, '')}).done( function(returnValue)
+            $.post( "../PHP/login.php",
+           {
+                nickname: $("#txtName").val().replace(/'/g, '').replace(/"/g, ''),
+                password: $("#txtPW").val().replace(/'/g, '').replace(/"/g, ''),
+                mail: $("#txtMail").val().replace(/'/g, '').replace(/"/g, '')
+            }).done( function(returnValue)
             {
                 login(returnValue);
             });
@@ -335,6 +340,27 @@ $(function()
             });
         }
     });
+    $( '#btnKontaktSend' ).click(function()
+    {
+        if($( '#contactMessageArea' ).val().trim() == "" || $( '#txtRequest' ).val().trim() == "" || $( '#txtFrom' ).val().trim() == "" || $( '#txtCLastname' ).val().trim() == "" || $( '#txtCFirstname' ).val().trim() == "")
+        {
+
+        }
+        else
+        {
+            $.post( "../PHP/sendMail.php",
+            {
+            Vorname: $('#txtCFirstname').val().replace(/'/g, '').replace(/"/g, ''),
+            Nachname: $('#txtCLastname').val().replace(/'/g, '').replace(/"/g, ''),
+            Mail: $('#txtFrom').val().replace(/'/g, '').replace(/"/g, ''),
+            Betreff: $('#txtRequest').val().replace(/'/g, '').replace(/"/g, ''),
+            Text: $('#contactMessageArea').val().replace(/'/g, '').replace(/"/g, '')
+            }).done(function(returnValue)
+            {
+                console.log(returnValue);
+            });
+        }
+    });
 });
 function loadComments(count)
 {
@@ -433,11 +459,11 @@ function login (returnValue)
 {
     if(returnValue == 0)
     {
-        alert('#signUpAlert', "Anmeldeinformation sind falsch.", "red");
+        alert('#signUpAlert', "Anmeldeinformationen sind falsch.", "red");
     }
     else
     {
-        alert('#signUpAlert', "Erolgreich angemeldet.", "forestgreen");
+        alert('#signUpAlert', "Erfolgreich angemeldet.", "forestgreen");
 
         $('#loginDiv').css("display", "none");
         $('#profilBTN').css("display", "none");
