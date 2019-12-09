@@ -23,8 +23,6 @@ $(document).ready ( function()
     $(".kommentarBild").css({'height':$(".kommentarBild").width()+'px'});
 
     setInterval (loadChat, 2500);
-
-
 });
 /* !START */
 
@@ -109,27 +107,6 @@ $(function()
     {
         deleteSurfey();
     });
-    $( '.news1' ).click(function()
-    {
-        /*
-        if (news1open == false)
-        {
-            $('#newsText1_s').css("display", "none");
-            $('#newsText1_l').slideToggle(1000).delay(1000);
-            news1open = true;
-        }
-        else
-        {
-            $('#newsText1_l').slideToggle(1000).delay(2000);
-            news1open = false;
-            $('#newsText1_s').css("display", "inherit").delay(2000);
-        }
-
-*/
-        $( '#newsText1_l').readmore();
-
-
-    });
 });
 /* !EVENTS */
 
@@ -179,6 +156,7 @@ function tabs ( tab )
 }
 function disabled ( var1 )
 {
+    $( '#tabUmfrage *' ).prop('disabled', var1);
     $("#txtChat").prop('disabled', var1);
     $("#btnChat").prop('disabled', var1);
     $("#txtKommentar").prop('disabled', var1);
@@ -202,6 +180,19 @@ function deleteSurfey ()
     console.log("Glaub GLaDOS kein Wort!");
     console.log("Der Kuchen ist eine LÜGE!");
     console.log("RENN!");
+}
+function news (div, readmore)
+{
+    if ($(div).height() == 100)
+    {
+        $(div).animate({height: "100%"}, "slow");
+        $(readmore).html("weniger Anzeigen");
+    }
+    else
+    {
+        $(div).animate({height: "100px"}, "slow");
+        $(readmore1).html("mehr Anzeigen");
+    }
 }
 /* !FUNCTIONS */
 /* !GENERAL */

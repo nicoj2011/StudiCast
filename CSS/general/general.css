@@ -407,51 +407,29 @@
 {
     background-image: url(../../IMG/x.jpg);
 }
-.row.newslarge
+.newslarge
 {
-    display: none;
+    height: 100px;
+    overflow: hidden;
 }
 readmore
 {
     cursor: pointer;
     color: red;
-
-
 }
 readmore:hover
 {
-
     text-decoration: underline;
-
 }
 .row h7
 {
     font-style: italic;
 }
-#newsText1_s
+.news
 {
+    height: 100%;
+}
 
-}
-#newsText1_l
-{
-    display: none;
-}
-#newsText2_s
-{
-
-}
-#newsText2_l
-{
-    display: none;
-}
-#newsText3_s
-{
-
-}
-#newsText3_l
-{
-    display: none;
-}
 /* !NEWS */
 
 /* ARCHIVS */
