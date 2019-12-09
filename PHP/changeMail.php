@@ -54,7 +54,7 @@ else
     $return = 1;
 }
 
-echo json_encode($sql);
+echo $return;
 
 $conn -> close();
 

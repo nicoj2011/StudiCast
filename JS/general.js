@@ -3,6 +3,9 @@ var loggedNick;
 var loggedMail;
 var loggedImg;
 var loggedRole;
+var news1open;
+
+news1open = false;
 
 /* START */
 $(document).ready ( function()
@@ -105,6 +108,27 @@ $(function()
     $( '#btnDeleteSurfey' ).click(function()
     {
         deleteSurfey();
+    });
+    $( '.news1' ).click(function()
+    {
+        /*
+        if (news1open == false)
+        {
+            $('#newsText1_s').css("display", "none");
+            $('#newsText1_l').slideToggle(1000).delay(1000);
+            news1open = true;
+        }
+        else
+        {
+            $('#newsText1_l').slideToggle(1000).delay(2000);
+            news1open = false;
+            $('#newsText1_s').css("display", "inherit").delay(2000);
+        }
+
+*/
+        $( '#newsText1_l').readmore();
+
+
     });
 });
 /* !EVENTS */
@@ -271,7 +295,14 @@ $(function()
             {
                 $.post( "../PHP/changeMail.php", { Mail: $('#txtMailChange').val(), Nickname: loggedNick }).done( function(returnValue)
                 {
+                    if (returnValue == 0)
+                    {
+                        alert ("#changeMailAlert", 'Ein unerwarteter Fehler ist aufgetreten!', "pink");
+                    }
+                    else
+                    {
                     mailChange(returnValue);
+                    }
                 });
             }
             else

@@ -387,6 +387,73 @@
 }
 /* !PODCAST */
 
+/* NEWS */
+.newsImg
+{
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    height: 20vh;
+    width: 100%;
+}
+#newsImg1
+{
+    background-image: url(../../IMG/abschluss.jpg);
+}
+#newsImg2
+{
+    background-image: url(../../IMG/saufen.jpg);
+}
+#newsImg3
+{
+    background-image: url(../../IMG/x.jpg);
+}
+.row.newslarge
+{
+    display: none;
+}
+readmore
+{
+    cursor: pointer;
+    color: red;
+
+
+}
+readmore:hover
+{
+
+    text-decoration: underline;
+
+}
+.row h7
+{
+    font-style: italic;
+}
+#newsText1_s
+{
+
+}
+#newsText1_l
+{
+    display: none;
+}
+#newsText2_s
+{
+
+}
+#newsText2_l
+{
+    display: none;
+}
+#newsText3_s
+{
+
+}
+#newsText3_l
+{
+    display: none;
+}
+/* !NEWS */
+
 /* ARCHIVS */
 .col-4.archivs
 {
