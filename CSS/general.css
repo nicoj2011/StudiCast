@@ -414,6 +414,14 @@
 {
     background-image: url(../../IMG/x.jpg);
 }
+#newsImg4
+{
+    background-image: url(../../IMG/Infotag.jpg);
+}
+#newsImg5
+{
+    background-image: url(../../IMG/Fasnacht.jpg);
+}
 .newslarge
 {
     height: 100px;
