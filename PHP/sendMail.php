@@ -1,7 +1,7 @@
 <?php
 /* Empfänger und Sender E-Mail */
 $to = "info@ratatosk.me";
-$test = 'me@ratatosk.ch';
+
 $from = "From: Info <" . $to . ">";
 
 $contact = $_POST['Mail'];
@@ -18,5 +18,5 @@ $text = $_POST['Text'] . ' <br> Kontaktmail: ' . $contact;
 
 mail($test, $request, $text, $from);
 
-echo 'Empfaenger: ' . $test . ' | Absender: ' . $from . ' | Betreff: ' . $request . ' | Text: ' . $test . ' | Mail: ';
+echo 'Empfaenger: ' . $o . ' | Absender: ' . $from . ' | Betreff: ' . $request . ' | Text: ' . $test . ' | Mail: ';
 ?>

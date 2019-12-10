@@ -15,7 +15,6 @@
     color: white;
     text-align: center;
     display: none;
-
 }
 #changeNameAlert
 {
@@ -37,6 +36,11 @@
 {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+#sendMailAlert
+{
+    border-radius: 0;
+    height: 30%;
 }
 /* !ALERTS */
 /* !GENERAL */
@@ -171,6 +175,7 @@
 {
     width: 100%;
 }
+/* !LOGIN && !SIGNUP */
 
 /* ACCOUNT */
 #profil
@@ -287,6 +292,7 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+/* !ACCOUNT */
 
 /* CHAT */
 #chat
@@ -362,6 +368,7 @@
 {
     width: 100%;
 }
+/* !CHAT */
 /* !SIDEPANEL */
 
 /* CONTENT */
@@ -429,7 +436,6 @@ readmore:hover
 {
     height: 100%;
 }
-
 /* !NEWS */
 
 /* ARCHIVS */
@@ -468,10 +474,9 @@ readmore:hover
     width: 100%;
     height: 100%;
 }
-
 /* SURFEY */
 
-/*  KONTAKT */
+/*  CONTACT */
 #contactFirstname
 {
    width: 100%;
@@ -509,6 +514,7 @@ readmore:hover
     border-top-right-radius: 0;
     width: 100%;
 }
+/*  !CONTACT */
 /* !CONTENT */
 
 /* FOOTER */

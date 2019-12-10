@@ -379,7 +379,7 @@ $(function()
             Text: $('#contactMessageArea').val().replace(/'/g, '').replace(/"/g, '')
             }).done(function(returnValue)
             {
-                console.log(returnValue);
+                alert('#sendMailAlert', 'Du hast uns erfolgreich kontaktiert. <br> <i>Hey... pssst. du hast niemanden kontaktiert... GLaDOS hat die Mail gelöscht.<i>', 'forestgreen');
             });
         }
     });

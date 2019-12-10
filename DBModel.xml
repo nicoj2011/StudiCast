@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.3
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Erstellungszeit: 06. Dez 2019 um 14:27
+- Server-Version: 5.5.60-0+deb7u1
+- PHP-Version: 5.6.29
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="ni1243592_1sql1" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="Account">
+                CREATE TABLE `Account` (
+                  `ID` int(11) NOT NULL AUTO_INCREMENT,
+                  `Nickname` text NOT NULL,
+                  `Passwort` text NOT NULL,
+                  `Mail` text NOT NULL,
+                  `Bild` text NOT NULL,
+                  `Rolle` text NOT NULL,
+                  PRIMARY KEY (`ID`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="Chat">
+                CREATE TABLE `Chat` (
+                  `ID` int(11) NOT NULL AUTO_INCREMENT,
+                  `AccID` int(11) NOT NULL,
+                  `Text` text NOT NULL,
+                  `Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                  PRIMARY KEY (`ID`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="Kommentar">
+                CREATE TABLE `Kommentar` (
+                  `ID` int(11) NOT NULL AUTO_INCREMENT,
+                  `AccID` int(11) NOT NULL,
+                  `Text` text NOT NULL,
+                  `Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                  PRIMARY KEY (`ID`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Datenbank: 'ni1243592_1sql1'
+    -->
+    <database name="ni1243592_1sql1">
+        <!-- Tabelle Account -->
+        <table name="Account">
+            <column name="ID">1</column>
+            <column name="Nickname">Bromel</column>
+            <column name="Passwort">test</column>
+            <column name="Mail">mustermann@mail.de</column>
+            <column name="Bild">Bromel.jpg</column>
+            <column name="Rolle">Admin</column>
+        </table>
+        <table name="Account">
+            <column name="ID">2</column>
+            <column name="Nickname">test</column>
+            <column name="Passwort">test</column>
+            <column name="Mail">test@der.de</column>
+            <column name="Bild">default.png</column>
+            <column name="Rolle">User</column>
+        </table>
+        <table name="Account">
+            <column name="ID">3</column>
+            <column name="Nickname">test1</column>
+            <column name="Passwort">test</column>
+            <column name="Mail">test1@de.de</column>
+            <column name="Bild">default.png</column>
+            <column name="Rolle">User</column>
+        </table>
+        <table name="Account">
+            <column name="ID">4</column>
+            <column name="Nickname">Bianca</column>
+            <column name="Passwort">123456</column>
+            <column name="Mail">wertzui@op.de</column>
+            <column name="Bild">default.png</column>
+            <column name="Rolle">User</column>
+        </table>
+        <table name="Account">
+            <column name="ID">5</column>
+            <column name="Nickname">lol</column>
+            <column name="Passwort">0</column>
+            <column name="Mail">lol@web.de</column>
+            <column name="Bild">default.png</column>
+            <column name="Rolle">User</column>
+        </table>
+        <table name="Account">
+            <column name="ID">6</column>
+            <column name="Nickname">Bibi</column>
+            <column name="Passwort">654321</column>
+            <column name="Mail">test@test.de</column>
+            <column name="Bild">default.png</column>
+            <column name="Rolle">User</column>
+        </table>
+        <table name="Account">
+            <column name="ID">7</column>
+            <column name="Nickname">dre</column>
+            <column name="Passwort">dre</column>
+            <column name="Mail">dre@dre.de</column>
+            <column name="Bild">dre.jpg</column>
+            <column name="Rolle">User</column>
+        </table>
+        <table name="Account">
+            <column name="ID">8</column>
+            <column name="Nickname">die</column>
+            <column name="Passwort">die</column>
+            <column name="Mail">die@die.de</column>
+            <column name="Bild">default.png</column>
+            <column name="Rolle">User</column>
+        </table>
+        <!-- Tabelle Chat -->
+        <table name="Chat">
+            <column name="ID">1</column>
+            <column name="AccID">1</column>
+            <column name="Text">Hey Nudels</column>
+            <column name="Date">2019-11-14 20:46:31</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">2</column>
+            <column name="AccID">3</column>
+            <column name="Text">Hey</column>
+            <column name="Date">2019-11-16 14:50:36</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">3</column>
+            <column name="AccID">3</column>
+            <column name="Text">Hey</column>
+            <column name="Date">2019-11-17 14:50:42</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">4</column>
+            <column name="AccID">3</column>
+            <column name="Text">Neeeeeeeeeeeein</column>
+            <column name="Date">2019-11-17 16:43:31</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">5</column>
+            <column name="AccID">1</column>
+            <column name="Text">Neeeeeeeeeeeein</column>
+            <column name="Date">2019-11-17 16:43:31</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">6</column>
+            <column name="AccID">3</column>
+            <column name="Text">Neeeeeeeeeeeein</column>
+            <column name="Date">2019-11-17 16:43:34</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">7</column>
+            <column name="AccID">1</column>
+            <column name="Text">Neeeeeeeeeeeein</column>
+            <column name="Date">2019-11-17 16:43:34</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">8</column>
+            <column name="AccID">3</column>
+            <column name="Text">DOOOOOOOOOCH</column>
+            <column name="Date">2019-11-17 16:44:59</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">9</column>
+            <column name="AccID">1</column>
+            <column name="Text">DOOOOOOOOOCH</column>
+            <column name="Date">2019-11-17 16:44:59</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">10</column>
+            <column name="AccID">3</column>
+            <column name="Text">DOOOOOOOOOCH</column>
+            <column name="Date">2019-11-17 16:45:01</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">11</column>
+            <column name="AccID">1</column>
+            <column name="Text">DOOOOOOOOOCH</column>
+            <column name="Date">2019-11-17 16:45:01</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">12</column>
+            <column name="AccID">1</column>
+            <column name="Text">Hey</column>
+            <column name="Date">2019-11-17 16:52:40</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">13</column>
+            <column name="AccID">1</column>
+            <column name="Text">Hey</column>
+            <column name="Date">2019-11-17 16:53:40</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">14</column>
+            <column name="AccID">1</column>
+            <column name="Text">was
+</column>
+            <column name="Date">2019-11-17 16:53:52</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">15</column>
+            <column name="AccID">1</column>
+            <column name="Text">sA</column>
+            <column name="Date">2019-11-17 16:54:48</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">16</column>
+            <column name="AccID">1</column>
+            <column name="Text">das</column>
+            <column name="Date">2019-11-17 16:58:58</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">17</column>
+            <column name="AccID">1</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-11-17 16:59:45</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">18</column>
+            <column name="AccID">1</column>
+            <column name="Text">DER</column>
+            <column name="Date">2019-11-17 05:01:38</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">19</column>
+            <column name="AccID">1</column>
+            <column name="Text">das</column>
+            <column name="Date">2019-11-17 05:02:30</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">20</column>
+            <column name="AccID">1</column>
+            <column name="Text">hey</column>
+            <column name="Date">2019-11-17 05:02:37</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">21</column>
+            <column name="AccID">1</column>
+            <column name="Text">Der</column>
+            <column name="Date">2019-11-17 05:03:52</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">22</column>
+            <column name="AccID">1</column>
+            <column name="Text">Hey</column>
+            <column name="Date">2019-11-17 05:04:50</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">23</column>
+            <column name="AccID">2</column>
+            <column name="Text">Hey</column>
+            <column name="Date">2019-11-17 05:05:52</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">24</column>
+            <column name="AccID">1</column>
+            <column name="Text">Oh hi how r u</column>
+            <column name="Date">2019-11-17 05:05:59</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">25</column>
+            <column name="AccID">1</column>
+            <column name="Text">'der'
+</column>
+            <column name="Date">2019-11-17 05:06:24</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">26</column>
+            <column name="AccID">2</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-11-17 05:06:24</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">27</column>
+            <column name="AccID">2</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-11-17 05:06:25</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">28</column>
+            <column name="AccID">2</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-11-17 05:06:25</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">29</column>
+            <column name="AccID">2</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-11-17 05:06:25</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">30</column>
+            <column name="AccID">2</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-11-17 05:06:25</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">31</column>
+            <column name="AccID">2</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-11-17 05:06:25</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">32</column>
+            <column name="AccID">2</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-11-17 05:06:25</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">33</column>
+            <column name="AccID">2</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-11-17 05:06:25</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">34</column>
+            <column name="AccID">2</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-11-17 05:06:26</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">35</column>
+            <column name="AccID">1</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-11-17 05:08:47</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">36</column>
+            <column name="AccID">1</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-11-17 05:08:51</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">37</column>
+            <column name="AccID">1</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-11-17 05:08:55</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">38</column>
+            <column name="AccID">6</column>
+            <column name="Text">hey hey
+</column>
+            <column name="Date">2019-11-18 01:48:38</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">39</column>
+            <column name="AccID">2</column>
+            <column name="Text">buh</column>
+            <column name="Date">2019-11-18 01:48:51</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">40</column>
+            <column name="AccID">2</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-11-18 01:55:30</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">41</column>
+            <column name="AccID">2</column>
+            <column name="Text">das</column>
+            <column name="Date">2019-11-18 01:55:45</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">42</column>
+            <column name="AccID">2</column>
+            <column name="Text">test</column>
+            <column name="Date">2019-11-23 03:19:41</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">43</column>
+            <column name="AccID">2</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-12-04 09:37:53</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">44</column>
+            <column name="AccID">3</column>
+            <column name="Text">hey</column>
+            <column name="Date">2019-12-04 09:38:14</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">45</column>
+            <column name="AccID">3</column>
+            <column name="Text">h</column>
+            <column name="Date">2019-12-04 09:41:48</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">46</column>
+            <column name="AccID">2</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-12-04 09:43:57</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">47</column>
+            <column name="AccID">2</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-12-04 09:45:15</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">48</column>
+            <column name="AccID">2</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-12-04 09:45:30</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">49</column>
+            <column name="AccID">3</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-12-04 09:45:44</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">50</column>
+            <column name="AccID">2</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-12-04 09:46:04</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">51</column>
+            <column name="AccID">3</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-12-04 09:46:15</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">52</column>
+            <column name="AccID">3</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-12-04 09:46:32</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">53</column>
+            <column name="AccID">2</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-12-04 09:46:40</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">54</column>
+            <column name="AccID">3</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-12-04 09:46:42</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">55</column>
+            <column name="AccID">3</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-12-04 09:46:49</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">56</column>
+            <column name="AccID">3</column>
+            <column name="Text">noooo</column>
+            <column name="Date">2019-12-04 09:46:53</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">57</column>
+            <column name="AccID">2</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-12-04 09:48:06</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">58</column>
+            <column name="AccID">2</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-12-04 09:48:22</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">59</column>
+            <column name="AccID">2</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-12-04 09:50:13</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">60</column>
+            <column name="AccID">3</column>
+            <column name="Text">das</column>
+            <column name="Date">2019-12-04 09:50:21</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">61</column>
+            <column name="AccID">2</column>
+            <column name="Text">SELECT * FROM Account;</column>
+            <column name="Date">2019-12-04 09:50:43</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">62</column>
+            <column name="AccID">2</column>
+            <column name="Text">der eder</column>
+            <column name="Date">2019-12-04 09:50:53</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">63</column>
+            <column name="AccID">2</column>
+            <column name="Text">Hi
+Da</column>
+            <column name="Date">2019-12-04 11:45:14</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">64</column>
+            <column name="AccID">2</column>
+            <column name="Text">Hi &lt;BR&gt; de</column>
+            <column name="Date">2019-12-04 11:45:37</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">65</column>
+            <column name="AccID">7</column>
+            <column name="Text">cder</column>
+            <column name="Date">2019-12-05 01:29:50</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">66</column>
+            <column name="AccID">7</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-12-05 01:29:51</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">67</column>
+            <column name="AccID">7</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-12-05 01:30:47</column>
+        </table>
+        <table name="Chat">
+            <column name="ID">68</column>
+            <column name="AccID">7</column>
+            <column name="Text">der</column>
+            <column name="Date">2019-12-05 01:30:48</column>
+        </table>
+        <!-- Tabelle Kommentar -->
+        <table name="Kommentar">
+            <column name="ID">1</column>
+            <column name="AccID">1</column>
+            <column name="Text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</column>
+            <column name="Date">2019-11-14 20:46:59</column>
+        </table>
+        <table name="Kommentar">
+            <column name="ID">2</column>
+            <column name="AccID">1</column>
+            <column name="Text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</column>
+            <column name="Date">2019-11-14 20:46:59</column>
+        </table>
+        <table name="Kommentar">
+            <column name="ID">14</column>
+            <column name="AccID">2</column>
+            <column name="Text">Mega Cooles Interview :D weiterso!!!!</column>
+            <column name="Date">2019-12-04 21:52:27</column>
+        </table>
+        <table name="Kommentar">
+            <column name="ID">15</column>
+            <column name="AccID">2</column>
+            <column name="Text">Mega Cooles Interview :D &lt;br&gt; weiterso!!!!</column>
+            <column name="Date">2019-12-04 21:52:37</column>
+        </table>
+        <table name="Kommentar">
+            <column name="ID">17</column>
+            <column name="AccID">7</column>
+            <column name="Text">well its somethig ... i guess...</column>
+            <column name="Date">2019-12-04 22:29:37</column>
+        </table>
+    </database>
+</pma_xml_export>
