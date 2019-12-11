@@ -191,7 +191,7 @@ function news (div, readmore)
     else
     {
         $(div).animate({height: "100px"}, "slow");
-        $(readmore1).html("mehr Anzeigen");
+        $(readmore).html("mehr Anzeigen");
     }
 }
 /* !FUNCTIONS */
