@@ -419,8 +419,6 @@ function kommentar (returnValue)
 {
     $('.kommentarSektion').empty();
 
-    rowKommentar = returnValue.split('~');
-
     returnValue.split('~').forEach(function(element)
     {
         if (element == '"0' || element == '0"')
@@ -576,8 +574,6 @@ function updateChat (returnValue)
     else
     {
         $('#chat').empty();
-
-        rowKommentar = returnValue.split('~');
 
         returnValue.split('~').forEach(function(element)
         {
