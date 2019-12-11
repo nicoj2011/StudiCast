@@ -437,7 +437,7 @@ function kommentar (returnValue)
                     + '</div>'
                 + '</div>'
                 + '<div class="col">'
-                    + element.split("|")[2]
+                    + element.split("|")[2].replace(/\\n/g, '<br>').replace(/\\u00e4/g, 'ä').replace(/\\u00fc/g, 'ü').replace(/\\u00f6/g, 'ö')
                 + '</div>'
                 + '<div class="col-2">'
                     + '<div class="kommentarDatum">'
@@ -584,7 +584,7 @@ function updateChat (returnValue)
             {
                 chatNick = element.split("|")[0];
                 chatDate = element.split("|")[1].split(" ")[1];
-                chatText = element.split("|")[2];
+                chatText = element.split("|")[2].replace(/\\n/g, '<br>').replace(/\\u00e4/g, 'ä').replace(/\\u00fc/g, 'ü').replace(/\\u00f6/g, 'ö');
 
                 if (chatNick == loggedNick)
                 {
