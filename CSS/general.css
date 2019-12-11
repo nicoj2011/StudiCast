@@ -364,10 +364,14 @@
 {
     width: 100%;
     resize: none;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
 #btnChat
 {
     width: 100%;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
 }
 /* !CHAT */
 /* !SIDEPANEL */
