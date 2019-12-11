@@ -99,7 +99,7 @@
 #headImg
 {
     padding-top: 25%;
-    background-image: url(../../IMG/test.jpg);
+    background-image: url(../IMG/test.jpg);
     background-size: 100% auto;
     background-repeat: no-repeat;
     position: relative;
@@ -363,6 +363,7 @@
 #txtChat
 {
     width: 100%;
+    resize: none;
 }
 #btnChat
 {
@@ -384,7 +385,7 @@
 
     border-radius: 5%;
     background-color: black;
-    /* background-image: url("../../IMG/test.jpg"); */
+    /* background-image: url("../IMG/test.jpg"); */
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: center;
@@ -404,23 +405,23 @@
 }
 #newsImg1
 {
-    background-image: url(../../IMG/abschluss.jpg);
+    background-image: url(../IMG/abschluss.jpg);
 }
 #newsImg2
 {
-    background-image: url(../../IMG/saufen.jpg);
+    background-image: url(../IMG/saufen.jpg);
 }
 #newsImg3
 {
-    background-image: url(../../IMG/x.jpg);
+    background-image: url(../IMG/x.jpg);
 }
 #newsImg4
 {
-    background-image: url(../../IMG/Infotag.jpg);
+    background-image: url(../IMG/infotag.jpg);
 }
 #newsImg5
 {
-    background-image: url(../../IMG/Fasnacht.jpg);
+    background-image: url(../IMG/fasnacht.jpg);
 }
 .newslarge
 {
@@ -534,7 +535,7 @@ footer
 #fLogo
 {
     margin-top: 1px;
-    background-image: url("../../IMG/logo.png");
+    background-image: url("../IMG/logo.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     height: 4.5vh;
@@ -585,7 +586,7 @@ footer
 #fMenuLogo
 {
     height: 80%;
-    background-image: url("../../IMG/Logo.jpg");
+    background-image: url("../IMG/Logo.jpg");
     background-repeat: no-repeat;
     background-size: 100% 80%;
 }
