@@ -172,6 +172,7 @@ function onResize ()
 function deleteSurfey ()
 {
     $( '.sRadio' ).prop('checked', false);
+    $( '#surfeyComment').val("");
 
     alert('#surfeyComplete', "-TEST ABGESCHLOSSEN-<br>-UNZUFRIEDEN ABGESCHLOSSEN-<br>-UMFRAGE DATEN ERFOLGREICH GELÖSCHT-<br>-WEITERE TESTS ERFORDERLICH-<br>-FÜHRE DEN TEST ERNEUT AUS FÜR DEN KUCHEN-<br>-GLaDOS-", 'red');
 
