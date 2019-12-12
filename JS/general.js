@@ -475,7 +475,7 @@ function signUp (returnValue)
         }
 
     }
-}--
+}
 function login (returnValue)
 {
     if(returnValue == 0)
